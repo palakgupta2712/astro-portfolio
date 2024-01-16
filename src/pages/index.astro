@@ -70,32 +70,21 @@ const workDetails: TWork[] = [
 ---
 
 <BaseLayout>
-  <div class="space-y-16 pb-24">
+  <div class="space-y-16 pb-24 ">
     <div class="pt-16 sm:pt-20">
       <h2 class="text-neutral-500 font-semibold pb-2">Work Experience</h2>
       <Work details={workDetails} />
       <PreviousWork companies={companies}/>
     <br/>
-    <h4 style="color:white">I document my weekly journey through the trenches of enterprise application development, system design, and performance optimization. I share my ups and downs (mostly wins!) in various formats, including blog posts here and LinkedIn newsletters. Dive into some of my favorite exploits below!</h4>
-</div>
-<style>
-      .libutton {
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        padding: 7px;
-        text-align: center;
-        outline: none;
-        text-decoration: none !important;
-        color: #ffffff !important;
-        width: 260px;
-        height: 32px;
-        border-radius: 16px;
-        background-color: #0A66C2;
-        font-family: "SF Pro Text", Helvetica, sans-serif;
-      }
-    </style>
+    <div >
+   
+    <h4 style="color:white;padding:5px" animated-border id="highlight">I document my weekly journey through the trenches of enterprise application development, system design, and performance optimization. I share my ups and downs (mostly wins!) in various formats, including blog posts here and LinkedIn newsletters. Dive into some of my favorite exploits below !</h4>
+<br/>
 <a class="libutton" href="https://www.linkedin.com/build-relation/newsletter-follow?entityUrn=7022684487754944512" target="_blank">Subscribe TechDiary on LinkedIn</a>
+</div>
+</div>
+
+
     <div>
       <h2 class="text-neutral-500 font-semibold pb-2">My thoughts</h2>
       <div class="space-y-2">
