@@ -51,3 +51,7 @@
 .demo-company *{
   visibility: hidden;
 }
+#highlight::selection {
+  color: #FF0000;  /* Change text color to red when selected */
+  background-color: #FFFF00;  /* Optional: Change background color */
+}
