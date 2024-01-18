@@ -6,7 +6,7 @@ author: "Amit Prakash"
 image:
   url: "https://media.licdn.com/dms/image/D5612AQEn28IUpxoyXQ/article-cover_image-shrink_720_1280/0/1705614484050?e=1710979200&v=beta&t=CDetlVBHTMsGnVnSOJtFkd0mv0bsaQ_Zy7_-jV9h6_c"
   alt: "The full Astro logo."
-tags: ["#PreflightParty" "#hashtag#SecurityFirst" "#hashtag#DataHarmony" "#hashtag#NoMoreWebWalls"]
+tags: ["#PreflightParty", "#hashtag#SecurityFirst", "#hashtag#DataHarmony", "#hashtag#NoMoreWebWalls"]
 ---
 Ever felt like merging two star ingredients from different kitchens to create a culinary masterpiece? Combining projects built on different .NET frameworks can feel similar – exciting possibilities mixed with a dash of complexity. While technically possible, mixing .NET Framework 4.8 and .NET Core 6 in the same solution requires careful planning and some clever maneuvering.
 
