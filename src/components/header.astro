@@ -1,6 +1,7 @@
 ---
 import { Image } from "astro:assets";
 
+import NavLink from "./nav-link.astro";
 import IconLink from "./homepage-header-icon.astro";
 
 import LinkedInIcon from "../icons/linked-icon.astro";
@@ -8,10 +9,11 @@ import XIcon from "../icons/x-icon.astro";
 import GithubIcon from "../icons/github-icon.astro";
 
 const USER_NAME = "Amit Prakash";
-const headline = "Backend Development Expert | Crafting Robust & Scalable Solutions.";
+const headline =
+  "Backend Development Expert | Crafting Robust & Scalable Solutions.";
 ---
 
-<div>
+<!-- <div>
   <div class="pt-8 sm:pt-16 pb-4">
     <div class="flex w-full">
       <div>
@@ -67,4 +69,19 @@ const headline = "Backend Development Expert | Crafting Robust & Scalable Soluti
      With over 8+ years in software development, I specialize in client/server architecture, .NET, C#, REST API, Go and WCF services. Skilled in Angular JS, SQL, and diverse technologies, I excel in system design, development, and maintenance. Proficient in Azure, various databases, and scripting languages, I am passionate about innovation and collaboration in technology.
     </span>
   </p>
-</div>
+</div> -->
+<header>
+  <nav>
+    <ul class="flex text-stone-300 pt-8 pb-2">
+      <li>
+        <NavLink to="/">home</NavLink>
+      </li>
+      <li>
+        <NavLink to="/blog">blog</NavLink>
+      </li>
+      <li>
+        <NavLink to="/projects">projects</NavLink>
+      </li>
+    </ul>
+  </nav>
+</header>

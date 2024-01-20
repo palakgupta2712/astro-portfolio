@@ -17,15 +17,19 @@ const pageTitle = title ? `${title} - ${USER}` : USER;
 <html lang="en">
   <head>
     <meta charset="utf-8" />
-    <link rel="icon" type="image/svg+xml" href="https://pbs.twimg.com/profile_images/1742955017676677122/SysiSnf2_400x400.jpg" />
+    <link
+      rel="icon"
+      type="image/svg+xml"
+      href="https://pbs.twimg.com/profile_images/1742955017676677122/SysiSnf2_400x400.jpg"
+    />
     <meta name="viewport" content="width=device-width" />
     <meta name="generator" content={Astro.generator} />
     <title>{pageTitle}</title>
     <ViewTransitions />
   </head>
 
-  <body class="bg-[rgb(18,18,18)]">
-    <main class="max-w-[700px] px-4 mx-auto">
+  <body class="bg-[#0C0A09]">
+    <main class="max-w-[700px] px-6 mx-auto">
       <Navbar />
       <slot />
     </main>

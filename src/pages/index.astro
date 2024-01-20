@@ -1,11 +1,11 @@
 ---
 import { getCollection } from "astro:content";
 import BaseLayout from "../layouts/base-layout.astro";
-import Work from "../components/work.astro";
 import "../styles/global.css";
-import PreviousWork from "../components/previous-work.astro";
 import type { TWork } from "../types/work.type";
-import { Image } from "astro:assets";
+
+import Link from "@/components/link.astro";
+import Text from "@/components/text.astro";
 
 const posts = await getCollection("posts");
 const totalPages = Math.ceil(posts.length / 3);
@@ -54,6 +54,9 @@ const companies = [
   },
 ];
 
+const currentCompany = "The Boeing Company";
+const currentCompanyLink = "https://www.boeing.com/";
+
 const workDetails: TWork[] = [
   {
     company: "Boeing",
@@ -70,155 +73,28 @@ const workDetails: TWork[] = [
 ---
 
 <BaseLayout>
-  <div class="space-y-16 pb-24">
-    <div class="pt-16 sm:pt-20">
-      <h2 class="text-neutral-500 font-semibold pb-2">Work Experience</h2>
-      <Work details={workDetails} />
-      <PreviousWork companies={companies} />
-      <br />
-      <div>
-        <h4 style="color:white;padding:5px" animated-border id="highlight">
-          I document my weekly journey through the trenches of enterprise
-          application development, system design, and performance optimization.
-          I share my ups and downs (mostly wins!) in various formats, including
-          blog posts here and LinkedIn newsletters. Dive into some of my
-          favorite exploits below !
-        </h4>
-        <br />
-        <a
-          class="libutton"
-          href="https://www.linkedin.com/build-relation/newsletter-follow?entityUrn=7022684487754944512"
-          target="_blank">Subscribe TechDiary on LinkedIn</a
-        >
-      </div>
-    </div>
+  <div class="py-8 text-stone-300">
+    <Text variant="h1" class="pb-4 text-3xl font-bold text-stone-100">
+      Amit Prakash
+    </Text>
 
-    <div>
-      <h2 class="text-neutral-500 font-semibold pb-2">My thoughts</h2>
-      <div class="space-y-2" id="posts">
-        {
-          posts.slice(0, 3).map((post) => (
-            <a
-              href={`/blog/${post.slug}`}
-              class="flex gap-3 p-4 -mx-4 sm:gap-4 transition hover:bg-neutral-900 rounded-xl outline-none ring-2 ring-transparent focus:ring-neutral-500 focus:bg-neutral-900 shadow-sm"
-            >
-              <div class="w-20 h-20 shrink-0 rounded-md overflow-hidden">
-                <Image
-                  src={post.data.image.url}
-                  alt={post.data.image.alt}
-                  width={128}
-                  height={128}
-                  class="w-full h-full object-cover"
-                />
-              </div>
+    <Text class="pb-10">
+      Hey, I am Amit Prakash, I build software for the world.
+    </Text>
 
-              <div class="space-y-2">
-                <h4 class="font-semibold text-neutral-100 text-lg sm:text-xl">
-                  {post.data.title}
-                </h4>
+    <Text>
+      Working at <Link to={currentCompanyLink}>{currentCompany}</Link>.
+    </Text>
 
-                <p class="text-neutral-500">{post.data.description}</p>
-              </div>
-            </a>
-          ))
-        }
-      </div>
-      <div class="flex justify-between items-center">
-        <button
-          id="prevButton"
-          type="button"
-          class="text-white bg-gray-800 hover:bg-gray-900 focus:outline-none focus:ring-4 focus:ring-gray-300 font-medium rounded-lg text-sm px-5 py-2.5 me-2 mb-2 dark:bg-gray-800 dark:hover:bg-gray-700 dark:focus:ring-gray-700 dark:border-gray-700"
-          >Prev</button
-        >
-        <span id="activePage" class="d-flex text-white h-100"
-          >1/{totalPages}</span
-        >
-        <button
-          id="nextButton"
-          type="button"
-          class="text-white bg-gray-800 hover:bg-gray-900 focus:outline-none focus:ring-4 focus:ring-gray-300 font-medium rounded-lg text-sm px-5 py-2.5 me-2 mb-2 dark:bg-gray-800 dark:hover:bg-gray-700 dark:focus:ring-gray-700 dark:border-gray-700"
-          >Next</button
-        >
-      </div>
-    </div>
+    <Text>
+      Lorem ipsum dolor sit amet consectetur. At semper aliquam elit urna at sem
+      facilisi eu tortor.
+    </Text>
+
+    <Text>
+      Molestie ullamcorper fermentum ac <Link to="#">pharetra</Link>. Neque a
+      porta vitae morbi odio egestas lectus. Felis nibh id sed congue in proin
+      hendrerit urna maecenas.
+    </Text>
   </div>
-  <script>
-    import { getCollection } from "astro:content";
-    const posts = await getCollection("posts");
-
-    const postData = {
-      pageSize: 3,
-      startIndex: 0,
-      endIndex: 3,
-      currentPage: 1,
-      pageData: posts.slice(0, 3),
-      totalPages: Math.ceil(posts.length / 3),
-    };
-    const prevButton = document.getElementById("prevButton");
-    const nextButton = document.getElementById("nextButton");
-    const postsContainer = document.getElementById("posts");
-    const activePageElement = document.getElementById("activePage");
-
-    function prevHandler() {
-      if (postData.currentPage === 1) return;
-
-      postData.startIndex = postData.startIndex - postData.pageSize;
-      postData.endIndex = postData.endIndex - postData.pageSize;
-      postData.currentPage -= 1;
-      postData.pageData = posts.slice(postData.startIndex, postData.endIndex);
-
-      if (activePageElement) {
-        activePageElement.textContent = `${postData.currentPage}/${postData.totalPages}`;
-      }
-      renderPagePosts();
-    }
-
-    function nextHandler() {
-      if (postData.currentPage === postData.totalPages) return;
-
-      postData.startIndex = postData.startIndex + postData.pageSize;
-      postData.endIndex = postData.endIndex + postData.pageSize;
-      postData.currentPage += 1;
-      postData.pageData = posts.slice(postData.startIndex, postData.endIndex);
-
-      if (activePageElement) {
-        activePageElement.textContent = `${postData.currentPage}/${postData.totalPages}`;
-      }
-      renderPagePosts();
-    }
-    prevButton?.addEventListener("click", prevHandler);
-    nextButton?.addEventListener("click", nextHandler);
-
-    function renderPagePosts() {
-      if (postsContainer) {
-        postsContainer.innerHTML = "";
-        postData.pageData.forEach((post) => {
-          postsContainer.innerHTML += `<a
-              href=/blog/${post.slug}
-              class="flex gap-3 p-4 -mx-4 sm:gap-4 transition hover:bg-neutral-900 rounded-xl outline-none ring-2 ring-transparent focus:ring-neutral-500 focus:bg-neutral-900 shadow-sm"
-            >
-              <div class="w-20 h-20 shrink-0 rounded-md overflow-hidden">
-                <Image
-                  src=${post.data.image.url}
-                  alt=${post.data.image.alt}
-                  width={128}
-                  height={128}
-                  class="w-full h-full object-cover"
-                />
-              </div>
-
-              <div class="space-y-2">
-                <h4 class="font-semibold text-neutral-100 text-lg sm:text-xl">
-                  ${post.data.title}
-                </h4>
-
-                <p class="text-neutral-500">${post.data.description}</p>
-              </div>
-            </a> `;
-        });
-      }
-    }
-
-    renderPagePosts();
-  </script>
 </BaseLayout>

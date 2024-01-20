@@ -1,0 +1,16 @@
+---
+import { cn } from "@/utils/classname";
+
+type Props = Pick<astroHTML.JSX.HTMLAttributes, "class"> & {
+  to: string;
+};
+
+const { to, ...props } = Astro.props;
+---
+
+<a
+  href={to}
+  class={cn("underline underline-offset-4 text-stone-100", props.class)}
+>
+  <slot />
+</a>
