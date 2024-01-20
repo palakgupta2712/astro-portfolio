@@ -1,10 +1,12 @@
 ---
 import { cn } from "@/utils/classname";
 
-type Props = Pick<astroHTML.JSX.HTMLAttributes, "class"> & {
+type Props = {
   to: string;
+  class?: string;
 };
 
+// need to spred props as using classs directly in Astro will cause a type error
 const { to, ...props } = Astro.props;
 ---
 

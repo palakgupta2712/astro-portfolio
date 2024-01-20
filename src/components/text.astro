@@ -5,22 +5,24 @@ import { cva, type VariantProps } from "class-variance-authority";
 const textStyles = cva([], {
   variants: {
     variant: {
-      h1: [""],
-      h2: [""],
-      h3: [""],
-      h4: [""],
+      h1: ["text-3xl font-bold"],
+      h2: ["text-2xl font-bold"],
+      h3: ["text-xl font-bold"],
+      h4: ["text-base font-bold"],
       p: ["text-base pb-3"],
-      span: [""],
+      span: ["text-sm"],
     },
   },
 });
 
 type TextVariants = VariantProps<typeof textStyles>["variant"];
 
-type Props = Pick<astroHTML.JSX.HTMLAttributes, "class"> & {
+type Props = {
+  class?: string;
   variant?: TextVariants;
 };
 
+// need to spred props as using classs directly in Astro will cause a type error
 const { variant = "p", ...props } = Astro.props;
 
 const getHtmlElementFromVariant = (variant: TextVariants) => {
