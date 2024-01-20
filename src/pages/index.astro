@@ -10,9 +10,11 @@ import Link from "@/components/link.astro";
 import Text from "@/components/text.astro";
 
 import MailIcon from "@/icons/mail.astro";
+import CopyIcon from "@/icons/copy-icon.astro";
+import LetConnectIcon from "@/icons/lets-connect-icon.astro";
+import ArrowUpRightIcon from "@/icons/arrow-up-right-icon.astro";
 
 import type { TWork } from "@/types/work.type";
-import CopyIcon from "@/icons/copy-icon.astro";
 
 const posts = await getCollection("posts");
 const totalPages = Math.ceil(posts.length / 3);
@@ -176,6 +178,13 @@ const workDetails: TWork[] = [
 
       <div class="p-2 roudned-full bg-stone-800 shadow rounded-full">
         <CopyIcon class="w-4 h-4" />
+      </div>
+    </div>
+
+    <div class="pt-4">
+      <div class="text-stone-400 relative w-max mx-auto">
+        <LetConnectIcon class="w-28 h-8" />
+        <ArrowUpRightIcon class="w-4 h-4 absolute top-0 -right-5" />
       </div>
     </div>
   </div>
