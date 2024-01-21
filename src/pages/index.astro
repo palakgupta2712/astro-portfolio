@@ -67,11 +67,10 @@ const companies = [
 
 const currentCompany = "The Boeing Company";
 const currentCompanyLink = "https://www.boeing.com/";
-const contactEmail = "contact@amitprakash.me";
 
 const workDetails: TWork[] = [
   {
-    company: "Boeing",
+    company: "The Boeing Company",
     role: "Senior Software Developer 2",
     description:
       "Responsible for developing stable and scalable micro service. The system has a set of unique challenges from a domain and technology perspective.",
@@ -80,6 +79,16 @@ const workDetails: TWork[] = [
       from: "2022-06-01",
       to: "",
     },
+  },
+  {
+    company: "EY",
+    role: "Senior Security Consultant II",
+    duration: {
+      from: "2022-02-01",
+      to: "2022-05-31",
+    },
+    description: "",
+    isOnGoing: false,
   },
 ];
 ---
@@ -122,18 +131,21 @@ const workDetails: TWork[] = [
 
     <div class="space-y-3">
       {
-        new Array(3).fill(0).map((_, index) => (
+        workDetails.map((work) => (
           <div class="bg-stone-800 px-4 py-3 rounded-xl">
             <Text variant="h3" class="pb-1 text-stone-50 font-semibold">
-              Company Name {index + 1}
+              {work.company}
             </Text>
 
             <Text variant="p" class="pb-3 text-stone-300">
-              Senior Software Engineer
+              {work.role}
             </Text>
 
             <Text variant="span" class="uppercase text-stone-300">
-              JUNE 2023 - present
+              {dayjs(work.duration.from).format("MMM YYYY")} -{" "}
+              {work.duration.to.length
+                ? dayjs(work.duration.to).format("MMM YYYY")
+                : "Present"}
             </Text>
           </div>
         ))
@@ -176,18 +188,6 @@ const workDetails: TWork[] = [
 
   <!-- email section -->
   <div class="pb-6 pt-10">
-    <!-- <div
-      class="text-stone-300 flex items-center bg-stone-900 pl-4 pr-2 rounded-full py-2 gap-3 max-w-80 mx-auto"
-    >
-      <MailIcon class="w-4 h-4" />
-
-      <Text variant="span" class="uppercase flex-1">{contactEmail}</Text>
-
-      <div class="p-2 roudned-full bg-stone-800 shadow rounded-full">
-        <CopyIcon class="w-4 h-4" />
-      </div>
-    </div> -->
-
     <ContactMePill />
 
     <div class="pt-4">
