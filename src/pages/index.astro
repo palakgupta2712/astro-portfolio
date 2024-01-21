@@ -8,6 +8,7 @@ import BaseLayout from "@/layouts/base-layout.astro";
 
 import Link from "@/components/link.astro";
 import Text from "@/components/text.astro";
+import ContactMePill from "@/components/contact-me-pill.astro";
 
 import MailIcon from "@/icons/mail.astro";
 import CopyIcon from "@/icons/copy-icon.astro";
@@ -15,6 +16,7 @@ import LetConnectIcon from "@/icons/lets-connect-icon.astro";
 import ArrowUpRightIcon from "@/icons/arrow-up-right-icon.astro";
 
 import type { TWork } from "@/types/work.type";
+import { ROUTES } from "@/routes";
 
 const posts = await getCollection("posts");
 const totalPages = Math.ceil(posts.length / 3);
@@ -151,8 +153,13 @@ const workDetails: TWork[] = [
     {
       posts.slice(0, 3).map((post) => (
         <div class="py-4 first:pt-0 last:pb-0 border-b border-gray-800 last:border-none">
-          <Text variant="h4" class="text-stone-50 font-semibold pb-2">
-            {post.data.title}
+          <Text variant="h4" class="text-stone-50 text-lg font-semibold pb-2">
+            <Link
+              to={`${ROUTES.blog}/${post.slug}`}
+              class="no-underline hover:underline w-max"
+            >
+              {post.data.title}
+            </Link>
           </Text>
 
           <div class="flex items-center gap-2 text-stone-400">
@@ -169,7 +176,7 @@ const workDetails: TWork[] = [
 
   <!-- email section -->
   <div class="pb-6 pt-10">
-    <div
+    <!-- <div
       class="text-stone-300 flex items-center bg-stone-900 pl-4 pr-2 rounded-full py-2 gap-3 max-w-80 mx-auto"
     >
       <MailIcon class="w-4 h-4" />
@@ -179,7 +186,9 @@ const workDetails: TWork[] = [
       <div class="p-2 roudned-full bg-stone-800 shadow rounded-full">
         <CopyIcon class="w-4 h-4" />
       </div>
-    </div>
+    </div> -->
+
+    <ContactMePill />
 
     <div class="pt-4">
       <div class="text-stone-400 relative w-max mx-auto">
