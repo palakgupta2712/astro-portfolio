@@ -1,30 +1,63 @@
 ---
-import { getCollection } from "astro:content";
-import BaseLayout from "../../layouts/base-layout.astro";
+import { getCollection, type CollectionEntry } from "astro:content";
+
+import Text from "@/components/text.astro";
+import BaseLayout from "@/layouts/base-layout.astro";
+import dayjs from "dayjs";
 
 const allPosts = await getCollection("posts");
 const PAGE_TITLE = "blog";
+
+// group posts
+const groupedPosts = allPosts.reduce<
+  Record<string, CollectionEntry<"posts">[]>
+>((acc, curr) => {
+  const publishedYear = new Date(curr.data.pubDate).getFullYear();
+
+  if (!acc[publishedYear]) {
+    return {
+      ...acc,
+      [publishedYear]: [curr],
+    };
+  }
+
+  acc[publishedYear].push(curr);
+  return acc;
+}, {});
 ---
 
 <BaseLayout title={PAGE_TITLE}>
-  <main class="max-w-screen-lg mx-auto p-6">
-    <div class="pb-6 text-neutral-50">
-      <h1>amit's blog</h1>
-      <p>welcome to my area of the internet.</p>
-    </div>
-
+  <div class="max-w-screen-lg mx-auto py-20">
     <div>
-      <ul>
-        {
-          allPosts.map((post) => (
-            <li>
-              <a href={`/blog/${post.slug}`} class="text-neutral-50">
-                {post.data.title}
-              </a>
-            </li>
-          ))
-        }
-      </ul>
+      {
+        Object.entries(groupedPosts).map((entries) => (
+          <div class="relative pb-16 last:pb-0">
+            <div class="absolute -top-16 -left-10">
+              <Text class="text-transparent text-[100px] font-extrabold [-webkit-text-stroke-color:rgb(170_170_170_/_0.2)] [-webkit-text-stroke-width:2px]">
+                {entries[0]}
+              </Text>
+            </div>
+
+            <ul>
+              {entries[1].map((entry) => (
+                <li class="text-stone-100">
+                  <div class="py-3 space-y-2">
+                    <Text variant="h3">{entry.data.title}</Text>
+
+                    <div class="text-stone-400 flex items-center gap-2">
+                      <Text variant="span">
+                        {dayjs(entry.data.pubDate).format("DD MMM")}
+                      </Text>
+                      <div class="w-1 h-1 bg-stone-600 rounded-full" />
+                      <Text variant="span">10min</Text>
+                    </div>
+                  </div>
+                </li>
+              ))}
+            </ul>
+          </div>
+        ))
+      }
     </div>
-  </main>
+  </div>
 </BaseLayout>

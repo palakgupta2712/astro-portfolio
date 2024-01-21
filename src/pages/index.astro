@@ -6,17 +6,15 @@ import "../styles/global.css";
 
 import BaseLayout from "@/layouts/base-layout.astro";
 
+import ContactMePill from "@/components/contact-me-pill.astro";
 import Link from "@/components/link.astro";
 import Text from "@/components/text.astro";
-import ContactMePill from "@/components/contact-me-pill.astro";
 
-import MailIcon from "@/icons/mail.astro";
-import CopyIcon from "@/icons/copy-icon.astro";
-import LetConnectIcon from "@/icons/lets-connect-icon.astro";
 import ArrowUpRightIcon from "@/icons/arrow-up-right-icon.astro";
+import LetConnectIcon from "@/icons/lets-connect-icon.astro";
 
-import type { TWork } from "@/types/work.type";
 import { ROUTES } from "@/routes";
+import type { TWork } from "@/types/work.type";
 
 const posts = await getCollection("posts");
 const totalPages = Math.ceil(posts.length / 3);
