@@ -3,15 +3,17 @@ import { cn } from "@/utils/classname";
 
 type Props = {
   to: string;
+  target?: astroHTML.JSX.HTMLAttributeAnchorTarget | null;
   class?: string;
 };
 
 // need to spred props as using classs directly in Astro will cause a type error
-const { to, ...props } = Astro.props;
+const { to, target, ...props } = Astro.props;
 ---
 
 <a
   href={to}
+  target={target}
   class={cn("underline underline-offset-4 text-stone-100", props.class)}
 >
   <slot />
