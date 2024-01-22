@@ -6,6 +6,7 @@ import dayjs from "dayjs";
 import "../styles/global.css";
 import BaseLayout from "./base-layout.astro";
 import Text from "@/components/text.astro";
+import SocialLinks from "@/components/social-links.astro";
 
 type Props = {
   post: CollectionEntry<"posts">;
@@ -45,7 +46,21 @@ const { post } = Astro.props;
     </div>
   </div>
 
-  <div class="pb-24">
+  <div class="pt-6 pb-16 md:pt-8 md:pb-20">
     <slot />
+
+    <div class="py-12 md:py-16">
+      <div class="w-32 mx-auto h-0.5 bg-stone-800"></div>
+    </div>
+
+    <div>
+      <Text
+        variant="h4"
+        class="text-sm uppercase text-stone-100 tracking pb-4 block font-medium"
+      >
+        Find me on
+      </Text>
+      <SocialLinks />
+    </div>
   </div>
 </BaseLayout>

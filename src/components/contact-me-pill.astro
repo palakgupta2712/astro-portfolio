@@ -44,8 +44,6 @@ const contactEmail = "contact@amitprakash.me";
 
   if (copyButton && copyButtonContainer) {
     copyButton.addEventListener("click", () => {
-      console.log(copyButtonContainer.dataset);
-
       navigator.clipboard.writeText("contact@amitprakash.me");
       copyButtonContainer.dataset.linkcopied = "true";
 
