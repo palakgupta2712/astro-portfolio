@@ -8,7 +8,7 @@ import BaseLayout from "@/layouts/base-layout.astro";
 import Link from "@/components/link.astro";
 
 const allPosts = await getCollection("posts");
-const PAGE_TITLE = "blog";
+const PAGE_TITLE = "hello visitor 👋";
 
 // group posts
 const groupedPosts = allPosts.reduce<
@@ -33,13 +33,25 @@ const postEntries = Object.entries(groupedPosts).sort(
 ---
 
 <BaseLayout title={PAGE_TITLE}>
-  <div class="max-w-screen-sm mx-auto py-20">
-    <div>
+  <div class="max-w-screen-sm mx-auto py-8 sm:py-12">
+    <Text variant="h1" class="text-stone-100 pb-4">
+      {PAGE_TITLE}
+    </Text>
+
+    <Text variant="p" class="text-stone-300 leading-relaxed">
+      I document my weekly journey through the trenches of enterprise
+      application development, system design, and performance optimization. I
+      share my ups and downs (mostly wins!) in various formats, including blog
+      posts here and LinkedIn newsletters. Dive into some of my favorite
+      exploits below !
+    </Text>
+
+    <div class="py-20 sm:py-24">
       {
         postEntries.map((entries) => (
           <div class="relative pb-24 last:pb-0">
             <div class="absolute -top-16 -left-10 -z-10">
-              <Text class="text-transparent text-[100px] font-extrabold [-webkit-text-stroke-color:rgb(170_170_170_/_0.25)] [-webkit-text-stroke-width:1.5px]">
+              <Text class="text-transparent text-[100px] font-extrabold [-webkit-text-stroke-color:rgb(170_170_170_/_0.2)] [-webkit-text-stroke-width:1.5px]">
                 {entries[0]}
               </Text>
             </div>
@@ -49,7 +61,7 @@ const postEntries = Object.entries(groupedPosts).sort(
                 <li class="text-stone-100">
                   <div class="py-4 space-y-2">
                     <Link
-                      to={entry.slug}
+                      to={`blog/${entry.slug}`}
                       class="no-underline hover:underline transition-all"
                     >
                       <Text variant="h3">{entry.data.title}</Text>
