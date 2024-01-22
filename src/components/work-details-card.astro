@@ -1,24 +1,46 @@
 ---
 import dayjs from "dayjs";
+import Text from "./text.astro";
 import { type TWork } from "../types/work.type";
 
 type Props = TWork;
 
-const { company, description, role, duration, isOnGoing } = Astro.props;
-
-const startDate = dayjs(duration.from).format("MMM YYYY");
-const endDate = isOnGoing ? "Present" : dayjs(duration.to).format("MMM YYYY");
+const { company, positions } = Astro.props;
 ---
 
 <div
-  class="cursor-default hover:bg-neutral-900 transition duration-300 -mx-6 py-4 shadow-sm px-6 sm:rounded-xl"
+  class="cursor-default bg-stone-900 hover:bg-stone-800 transition duration-200 -mx-6 py-4 shadow-sm px-6 sm:rounded-xl"
 >
-  <div class="flex items-center pb-2">
-    <h3 class="text-neutral-100 text-xl font-semibold flex-1">{company}</h3>
-    <span class="text-neutral-500 text-sm">{startDate} - {endDate}</span>
+  <Text variant="h3" class="text-neutral-100 text-xl font-semibold flex-1 pb-2">
+    {company}
+  </Text>
+
+  <div class="flex flex-col justify-center gap-2 w-max pt-1">
+    {
+      positions.map((position) => (
+        <div class="group">
+          <div class="relative">
+            <Text variant="p" class="text-stone-300 pb-1">
+              {position.title}
+            </Text>
+
+            <Text variant="span" class="uppercase text-stone-400">
+              {dayjs(position.duration.from).format("MMM YYYY")} -{" "}
+              {position.isOnGoing
+                ? "Present"
+                : dayjs(position.duration.to).format("MMM YYYY")}
+            </Text>
+
+            <div class="absolute hidden w-0.5 h-8 bg-stone-700 top-7" />
+          </div>
+
+          <div class="ml-1 group-last:hidden py-2">
+            <div class="w-1.5 h-1.5 rounded-full bg-stone-600 -translate-x-0.5" />
+            <div class="w-0.5 h-5 bg-stone-600 top-7" />
+            <div class="w-1.5 h-1.5 rounded-full bg-stone-600 -translate-x-0.5" />
+          </div>
+        </div>
+      ))
+    }
   </div>
-
-  <p class="text-neutral-400 font-medium text-lg pb-2">{role}</p>
-
-  <p class="text-neutral-400 font-light">{description}</p>
 </div>

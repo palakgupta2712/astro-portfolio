@@ -1,0 +1,11 @@
+---
+type Props = {
+  to: string;
+};
+
+const { to } = Astro.props;
+---
+
+<a href={to} class="px-2 py-2 block">
+  <slot />
+</a>

@@ -1,0 +1,50 @@
+---
+import GithubIcon from "@/icons/github-icon.astro";
+import Text from "./text.astro";
+import LinkedIcon from "@/icons/linked-icon.astro";
+import XIcon from "@/icons/x-icon.astro";
+import Link from "./link.astro";
+
+const links: {
+  title: string;
+  alt: string;
+  href: string;
+  icon: (_props: Record<string, any>) => any;
+}[] = [
+  {
+    title: "GitHub",
+    icon: GithubIcon,
+    alt: "Amit Prakash's GitHub profile link",
+    href: "https://github.com/iamitprakash",
+  },
+  {
+    title: "LinkedIn",
+    icon: LinkedIcon,
+    alt: "Amit Prakash's LinkedIn profile link",
+    href: "https://www.linkedin.com/in/dev-amit-prakash/",
+  },
+  {
+    title: "Twitter",
+    icon: XIcon,
+    alt: "Amit Prakash's Twitter profile link",
+    href: "https://twitter.com/twts_tejas",
+  },
+];
+---
+
+<div class="flex items-center gap-1 flex-wrap -mx-3">
+  {
+    links.map((link) => (
+      <Link
+        to={link.href}
+        target="_blank"
+        class="no-underline flex items-center gap-2 text-stone-100 py-2 px-3 rounded-lg transition hover:bg-stone-800"
+      >
+        <link.icon class="w-5 h-5" />
+        <Text variant="span" class="text-base">
+          {link.title}
+        </Text>
+      </Link>
+    ))
+  }
+</div>
