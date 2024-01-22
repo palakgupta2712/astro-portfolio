@@ -1,10 +1,11 @@
 ---
-import dayjs from "dayjs";
 import { Image } from "astro:assets";
 import type { CollectionEntry } from "astro:content";
-import { ViewTransitions } from "astro:transitions";
+import dayjs from "dayjs";
 
 import "../styles/global.css";
+import BaseLayout from "./base-layout.astro";
+import Text from "@/components/text.astro";
 
 type Props = {
   post: CollectionEntry<"posts">;
@@ -13,51 +14,38 @@ type Props = {
 const { post } = Astro.props;
 ---
 
-<html lang="en">
-  <head>
-    <meta charset="utf-8" />
-    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-    <meta name="viewport" content="width=device-width" />
-    <meta name="generator" content={Astro.generator} />
-    <title>{post.data.title}</title>
-    <ViewTransitions />
-  </head>
+<BaseLayout title={post.data.title} class="max-w-screen-md">
+  <div class="py-8">
+    <div class="pb-6">
+      <Text variant="h1" class="pb-2 text-stone-100 sm:text-4xl">
+        {post.data.title}
+      </Text>
 
-  <body class="bg-[rgb(18,18,18)]">
-    <div class="px-4 max-w-screen-lg mx-auto">
-      <header class="py-6">
-        <nav>
-          <ul>
-            <li>
-              <a href="/" class="text-neutral-100 text-lg">Amit Prakash</a>
-            </li>
-          </ul>
-        </nav>
-      </header>
+      <div class="flex items-center gap-2">
+        <Text variant="span" class="text-stone-400">
+          {dayjs(post.data.pubDate).format("MMM DD YYYY")}
+        </Text>
 
-      <main class="text-neutral-50 py-10">
-        <div class="pb-8">
-          <h1 class="font-bold text-4xl md:text-5xl pb-4">{post.data.title}</h1>
-          <p>
-            {dayjs(post.data.pubDate).format("DD MMMM YYYY")}
-          </p>
+        <div class="w-1 h-1 rounded-full bg-stone-500"></div>
 
-          <div
-            class="bg-gray-100 w-full rounded-lg h-96 aspect-video overflow-hidden my-4"
-          >
-            <Image
-              src={post.data.image.url}
-              alt={post.data.image.alt}
-              width={1024}
-              height={384}
-            />
-          </div>
-        </div>
-
-        <div>
-          <slot />
-        </div>
-      </main>
+        <Text variant="span" class="text-stone-400">
+          {10}min
+        </Text>
+      </div>
     </div>
-  </body>
-</html>
+
+    <div class="bg-gray-100 w-full aspect-video overflow-hidden">
+      <Image
+        src={post.data.image.url}
+        alt={post.data.image.alt}
+        width={1024}
+        height={384}
+        class="w-full h-full object-cover"
+      />
+    </div>
+  </div>
+
+  <div class="pb-24">
+    <slot />
+  </div>
+</BaseLayout>

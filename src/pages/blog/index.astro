@@ -10,7 +10,6 @@ import Link from "@/components/link.astro";
 const allPosts = await getCollection("posts");
 const PAGE_TITLE = "hello visitor 👋";
 
-// group posts
 const groupedPosts = allPosts.reduce<
   Record<string, CollectionEntry<"posts">[]>
 >((acc, curr) => {
@@ -39,11 +38,11 @@ const postEntries = Object.entries(groupedPosts).sort(
     </Text>
 
     <Text variant="p" class="text-stone-300 leading-relaxed">
-      I document my weekly journey through the trenches of enterprise
-      application development, system design, and performance optimization. I
-      share my ups and downs (mostly wins!) in various formats, including blog
-      posts here and LinkedIn newsletters. Dive into some of my favorite
-      exploits below !
+      Welcome to my area of the internet, I document my weekly journey through
+      the trenches of enterprise application development, system design, and
+      performance optimization. I share my ups and downs (mostly wins!) in
+      various formats, including blog posts here and LinkedIn newsletters. Dive
+      into some of my favorite exploits below !
     </Text>
 
     <div class="py-20 sm:py-24">
@@ -51,7 +50,7 @@ const postEntries = Object.entries(groupedPosts).sort(
         postEntries.map((entries) => (
           <div class="relative pb-24 last:pb-0">
             <div class="absolute -top-16 -left-10 -z-10">
-              <Text class="text-transparent text-[100px] font-extrabold [-webkit-text-stroke-color:rgb(170_170_170_/_0.2)] [-webkit-text-stroke-width:1.5px]">
+              <Text class="text-transparent text-[100px] font-extrabold [-webkit-text-stroke-color:rgb(170_170_170_/_0.15)] [-webkit-text-stroke-width:2px]">
                 {entries[0]}
               </Text>
             </div>

@@ -11,7 +11,6 @@ tags: ["astro", "blogging", "learning in public"]
 
 For a while think about a bustling marketplace, brimming with vendors hawking their wares. To get what you need, you have to weave through the throng, shouting your requests to each booth. It's loud, confusing, and frankly, not very efficient. Now picture this: a central plaza with a town crier. You simply tell the crier what you're looking for, and they relay it to everyone. Order emerges from chaos, and you leave with your prize much faster.
 
-
 That's the magic of the Mediator pattern in software development. This is a behavioural design pattern that lowers dependency between programme components by having them communicate indirectly via a particular mediator object. Individual components can be easily modified, extended, and reused thanks to the Mediator, which eliminates their reliance on dozens of other classes.
 
 Just like the town crier, the mediator acts as a central hub for communication between objects. No longer do they need to shout directly at each other, creating a tangle of dependencies and complexity. Instead, they whisper their needs to the mediator, who then sorts it all out and ensures everyone gets what they need.
@@ -22,76 +21,74 @@ Here's how the mediator works in a common example: a chat application. Imagine s
 
 Enter the chatroom mediator! Users talk to the mediator, who figures out who needs to hear what. If Alice sends a message, the mediator broadcasts it to everyone else in the room. No need for Alice to know or care about how many people are listening. The mediator handles the delivery, like a digital postman.
 
-
 ### UML DESIGN
 
 ![image](https://github.com/iamitprakash/astro-portfolio/assets/34869115/ce913b09-3ea4-4334-83db-b99f549867ef)
 
-
-  ```
+```
 interface IChatRoomMediator
 {
-    void Send(string message, Participant participant);
+  void Send(string message, Participant participant);
 }
 
 class ChatRoomMediator : IChatRoomMediator
 {
-    private List<Participant> participants = new List<Participant>();
+  private List<Participant> participants = new List<Participant>();
 
-    public void AddParticipant(Participant participant)
-    {
-        participants.Add(participant);
-    }
+  public void AddParticipant(Participant participant)
+  {
+      participants.Add(participant);
+  }
 
-    public void Send(string message, Participant sender)
-    {
-        foreach (Participant participant in participants)
-        {
-            if (participant != sender)
-            {
-                participant.Receive(message);
-            }
-        }
-    }
+  public void Send(string message, Participant sender)
+  {
+      foreach (Participant participant in participants)
+      {
+          if (participant != sender)
+          {
+              participant.Receive(message);
+          }
+      }
+  }
 }
 
 abstract class Participant
 {
-    protected IChatRoomMediator mediator;
+  protected IChatRoomMediator mediator;
 
-    public Participant(IChatRoomMediator mediator)
-    {
-        this.mediator = mediator;
-    }
+  public Participant(IChatRoomMediator mediator)
+  {
+      this.mediator = mediator;
+  }
 
-    public abstract void Send(string message);
-    public abstract void Receive(string message);
+  public abstract void Send(string message);
+  public abstract void Receive(string message);
 }
 
 class ConcreteParticipantA : Participant
 {
-    public ConcreteParticipantA(IChatRoomMediator mediator) : base(mediator)
-    {
-    }
+  public ConcreteParticipantA(IChatRoomMediator mediator) : base(mediator)
+  {
+  }
 
-    public override void Send(string message)
-    {
-        Console.WriteLine($"{this.GetType().Name}: Sending message: {message}");
-        mediator.Send(message, this);
-    }
+  public override void Send(string message)
+  {
+      Console.WriteLine($"{this.GetType().Name}: Sending message: {message}");
+      mediator.Send(message, this);
+  }
 
-    public override void Receive(string message)
-    {
-        Console.WriteLine($"{this.GetType().Name}: Received message: {message}");
-    }
+  public override void Receive(string message)
+  {
+      Console.WriteLine($"{this.GetType().Name}: Received message: {message}");
+  }
 }
 
 // Similar implementation for ConcreteParticipantB
 ```
+
 ## Real World example (chat room use case)
 
 Let's implement a Mediator pattern facilitating loosely coupled communication between different Participants registering with a Chatroom. The Chatroom is the central hub through which all communication takes place. At this point only one-to-one communication is implemented in the Chatroom, but would be trivial to change to one-to-many.
-
 
 ```
 using System;
@@ -265,7 +262,7 @@ namespace Mediator.RealWorld
             base.Receive(from, message);
         }
     }
-} 
+}
 ```
 
 ## Key takeaway:
@@ -275,9 +272,9 @@ Benefits:
 1. **Reduced coupling**: Objects don't need to know about each other's internal details.
 2. **Enhanced maintainability**: Changes to interactions can be made in the mediator without affecting colleagues.
 3. **Centralized control**: Logic for complex interactions is consolidated in the mediator.
-4. **Reusability: Colleagues can be reused independently in different contexts.
+4. \*\*Reusability: Colleagues can be reused independently in different contexts.
 
-##Common Use Cases:
+## Common Use Cases:
 
 1. GUI components (buttons, menus, windows)
 2. Chat applications
@@ -286,6 +283,7 @@ Benefits:
 5. Multi-threaded applications
 
 ## Considerations:
+
 1. Mediator can become a central point of complexity.
 2. Overuse can lead to a God object anti-pattern.
 3. Use judiciously when benefits outweigh potential drawbacks.
