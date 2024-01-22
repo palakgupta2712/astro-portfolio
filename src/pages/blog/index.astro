@@ -1,9 +1,11 @@
 ---
 import { getCollection, type CollectionEntry } from "astro:content";
+import dayjs from "dayjs";
 
 import Text from "@/components/text.astro";
 import BaseLayout from "@/layouts/base-layout.astro";
-import dayjs from "dayjs";
+
+import Link from "@/components/link.astro";
 
 const allPosts = await getCollection("posts");
 const PAGE_TITLE = "blog";
@@ -24,16 +26,20 @@ const groupedPosts = allPosts.reduce<
   acc[publishedYear].push(curr);
   return acc;
 }, {});
+
+const postEntries = Object.entries(groupedPosts).sort(
+  (a, b) => Number(b[0]) - Number(a[0])
+);
 ---
 
 <BaseLayout title={PAGE_TITLE}>
   <div class="max-w-screen-lg mx-auto py-20">
     <div>
       {
-        Object.entries(groupedPosts).map((entries) => (
-          <div class="relative pb-16 last:pb-0">
-            <div class="absolute -top-16 -left-10">
-              <Text class="text-transparent text-[100px] font-extrabold [-webkit-text-stroke-color:rgb(170_170_170_/_0.2)] [-webkit-text-stroke-width:2px]">
+        postEntries.map((entries) => (
+          <div class="relative pb-24 last:pb-0">
+            <div class="absolute -top-16 -left-10 -z-10">
+              <Text class="text-transparent text-[100px] font-extrabold [-webkit-text-stroke-color:rgb(170_170_170_/_0.25)] [-webkit-text-stroke-width:2px]">
                 {entries[0]}
               </Text>
             </div>
@@ -41,8 +47,13 @@ const groupedPosts = allPosts.reduce<
             <ul>
               {entries[1].map((entry) => (
                 <li class="text-stone-100">
-                  <div class="py-3 space-y-2">
-                    <Text variant="h3">{entry.data.title}</Text>
+                  <div class="py-4 space-y-2">
+                    <Link
+                      to={entry.slug}
+                      class="no-underline hover:underline transition-all"
+                    >
+                      <Text variant="h3">{entry.data.title}</Text>
+                    </Link>
 
                     <div class="text-stone-400 flex items-center gap-2">
                       <Text variant="span">
