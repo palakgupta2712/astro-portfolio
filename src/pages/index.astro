@@ -1,5 +1,6 @@
 ---
 import { getCollection } from "astro:content";
+import { Image } from "astro:assets";
 import dayjs from "dayjs";
 
 import "../styles/global.css";
@@ -16,6 +17,7 @@ import LetConnectIcon from "@/icons/lets-connect-icon.astro";
 import { ROUTES } from "@/routes";
 import type { TWork } from "@/types/work.type";
 import SocialLinks from "@/components/social-links.astro";
+import Work from "@/components/work.astro";
 
 const posts = await getCollection("posts");
 const companies = [
@@ -69,24 +71,82 @@ const currentCompanyLink = "https://www.boeing.com/";
 const workDetails: TWork[] = [
   {
     company: "The Boeing Company",
-    role: "Senior Software Developer 2",
-    description:
-      "Responsible for developing stable and scalable micro service. The system has a set of unique challenges from a domain and technology perspective.",
-    isOnGoing: true,
-    duration: {
-      from: "2022-06-01",
-      to: "",
-    },
+    positions: [
+      {
+        title: "Senior Software Developer 2",
+        isOnGoing: true,
+        description:
+          "Responsible for developing stable and scalable micro service. The system has a set of unique challenges from a domain and technology perspective.",
+        duration: {
+          from: "2022-06-01",
+          to: "",
+        },
+      },
+    ],
   },
   {
     company: "EY",
-    role: "Senior Security Consultant II",
-    duration: {
-      from: "2022-02-01",
-      to: "2022-05-31",
-    },
-    description: "",
-    isOnGoing: false,
+    positions: [
+      {
+        title: "Senior Security Consultant II",
+        description:
+          "Responsible for developing stable and scalable micro service. The system has a set of unique challenges from a domain and technology perspective.",
+        duration: {
+          from: "2022-02-01",
+          to: "2022-05-31",
+        },
+      },
+      {
+        title: "Senior Security Consultant I",
+        description: "",
+        duration: {
+          from: "2021-03-01",
+          to: "2022-01-01",
+        },
+      },
+    ],
+  },
+  {
+    company: "KPMG",
+    positions: [
+      {
+        title: "Software Development Consultant",
+        description:
+          "Developed brand new Analytic Web based application along with Web application performance tuning and Stored Procedure performance improvement. Created Stored Procedure for remove direct dependency and background processing.",
+        duration: {
+          from: "2020-01-01",
+          to: "2021-03-01",
+        },
+      },
+    ],
+  },
+  {
+    company: "Siemens",
+    positions: [
+      {
+        title: "Senior Software Engineer Motion Control - R&D",
+        description:
+          "Enabled ET 200 Pro FC-2 integration with TIA Portal | Application & Framework Developer and IoT Expert. Integrated custom developed library in existing framework. Improved performance of the tool while loading into windows system.",
+        duration: {
+          from: "2018-08-01",
+          to: "2020-01-01",
+        },
+      },
+    ],
+  },
+  {
+    company: "HCL Technologies",
+    positions: [
+      {
+        title: "Software Engineer",
+        description:
+          "Developed brand new Payment gateway solution as per PCI guideline. Implemented TLS 1.2 for settlement sever and application security. Web application performance tuning and Stored Procedure performance improvement.",
+        duration: {
+          from: "2015-08-01",
+          to: "2018-08-01",
+        },
+      },
+    ],
   },
 ];
 ---
@@ -94,16 +154,28 @@ const workDetails: TWork[] = [
 <BaseLayout>
   <!-- intro section -->
   <div class="py-8 text-stone-300">
-    <Text variant="h1" class="pb-4 text-3xl font-bold text-stone-100">
-      Amit Prakash
-    </Text>
+    <div class="flex pb-2">
+      <div>
+        <Text variant="h1" class="pb-2 text-3xl font-bold text-stone-100">
+          Amit Prakash
+        </Text>
 
-    <Text class="pb-10">
-      Hey, I am Amit Prakash, I build software for the world.
-    </Text>
+        <Text class="text-yellow-500">Decoding the Enigma💡</Text>
+      </div>
 
-    <Text>
-      Working at <Link to={currentCompanyLink}>{currentCompany}</Link>.
+      <div class="w-28 h-28 rounded-lg overflow-hidden ml-auto bg-stone-800">
+        <Image
+          src="/profile.png"
+          alt={""}
+          width={300}
+          height={300}
+          class="w-full h-full object-cover"
+        />
+      </div>
+    </div>
+
+    <Text class="pb-4">
+      Engineering at <Link to={currentCompanyLink}>{currentCompany}</Link>.
     </Text>
 
     <Text class="pb-0 leading-relaxed">
@@ -124,28 +196,7 @@ const workDetails: TWork[] = [
       places i have worked
     </Text>
 
-    <div class="space-y-3">
-      {
-        workDetails.map((work) => (
-          <div class="bg-stone-800 px-4 py-3 rounded-xl">
-            <Text variant="h3" class="pb-1 text-stone-50 font-semibold">
-              {work.company}
-            </Text>
-
-            <Text variant="p" class="pb-3 text-stone-300">
-              {work.role}
-            </Text>
-
-            <Text variant="span" class="uppercase text-stone-300">
-              {dayjs(work.duration.from).format("MMM YYYY")} -{" "}
-              {work.duration.to.length
-                ? dayjs(work.duration.to).format("MMM YYYY")
-                : "Present"}
-            </Text>
-          </div>
-        ))
-      }
-    </div>
+    <Work details={workDetails} />
   </div>
 
   <!-- blogs -->
