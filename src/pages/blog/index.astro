@@ -33,13 +33,13 @@ const postEntries = Object.entries(groupedPosts).sort(
 ---
 
 <BaseLayout title={PAGE_TITLE}>
-  <div class="max-w-screen-lg mx-auto py-20">
+  <div class="max-w-screen-sm mx-auto py-20">
     <div>
       {
         postEntries.map((entries) => (
           <div class="relative pb-24 last:pb-0">
             <div class="absolute -top-16 -left-10 -z-10">
-              <Text class="text-transparent text-[100px] font-extrabold [-webkit-text-stroke-color:rgb(170_170_170_/_0.25)] [-webkit-text-stroke-width:2px]">
+              <Text class="text-transparent text-[100px] font-extrabold [-webkit-text-stroke-color:rgb(170_170_170_/_0.25)] [-webkit-text-stroke-width:1.5px]">
                 {entries[0]}
               </Text>
             </div>
