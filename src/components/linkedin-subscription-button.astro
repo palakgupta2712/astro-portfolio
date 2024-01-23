@@ -1,0 +1,16 @@
+---
+import { cn } from "@/utils/classname";
+import Link from "./link.astro";
+---
+
+<Link
+  class={cn(
+    "bg-blue-600 text-stone-50 no-underline px-4 py-3 text-sm rounded-xl block w-max transition font-medium",
+    "shadow-[0_0_15px_-3px_#1d4ed8,0_0px_6px_-4px_#1d4ed8]",
+    "hover:bg-blue-700"
+  )}
+  to="https://www.linkedin.com/build-relation/newsletter-follow?entityUrn=7022684487754944512"
+  target="_blank"
+>
+  Subscribe to my Tech Diary
+</Link>
