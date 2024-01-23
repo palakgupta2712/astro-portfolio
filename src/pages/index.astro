@@ -154,7 +154,7 @@ const workDetails: TWork[] = [
 <BaseLayout>
   <!-- intro section -->
   <div class="py-8 text-stone-300">
-    <div class="flex pb-2">
+    <div class="flex pb-4 md:pb-2">
       <div>
         <Text variant="h1" class="pb-2 text-2xl font-bold text-stone-100">
           Amit Prakash
@@ -163,7 +163,9 @@ const workDetails: TWork[] = [
         <Text class="text-yellow-500">(Decoding the Enigma💡)</Text>
       </div>
 
-      <div class="w-28 h-28 rounded-lg overflow-hidden ml-auto bg-stone-800">
+      <div
+        class="w-20 h-20 md:w-28 md:h-28 rounded-lg overflow-hidden ml-auto bg-stone-800"
+      >
         <Image
           src="/profile.png"
           alt={""}
@@ -175,15 +177,17 @@ const workDetails: TWork[] = [
     </div>
 
     <Text class="pb-4">
-      Engineering @ <Link to={currentCompanyLink} target="_blank">{currentCompany}</Link>.
+      Engineering @ <Link to={currentCompanyLink} target="_blank">
+        {currentCompany}
+      </Link>.
     </Text>
 
     <Text class="pb-0 leading-relaxed">
       As a Backend Development Expert with over 8+ years of experience, I thrive
       on crafting Robust and Scalable Solutions. My expertise spans
-      client/server to Microservice Architecture, .NET, C#, REST API, GO, and WCF services. I'm
-      well-versed in Angular, SQL, Azure and a myriad of technologies, excelling in
-      System Design, Development and Maintenance.
+      client/server to Microservice Architecture, .NET, C#, REST API, GO, and
+      WCF services. I'm well-versed in Angular, SQL, Azure and a myriad of
+      technologies, excelling in System Design, Development and Maintenance.
     </Text>
   </div>
 
@@ -250,10 +254,7 @@ const workDetails: TWork[] = [
       <div class="text-stone-400 relative w-max mx-auto">
         <LetConnectIcon class="w-28 h-8" />
         <ArrowUpRightIcon class="w-4 h-4 absolute top-0 -right-5" />
-
-    
       </div>
-      
     </div>
   </div>
 </BaseLayout>
