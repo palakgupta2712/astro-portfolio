@@ -7,7 +7,7 @@ import "../styles/global.css";
 import BaseLayout from "./base-layout.astro";
 import Text from "@/components/text.astro";
 import SocialLinks from "@/components/social-links.astro";
-import ArrowBackwardIcon from "@/icons/arrow-backward-icon.astro";
+
 type Props = {
   post: CollectionEntry<"posts">;
 };
@@ -16,13 +16,7 @@ const { post } = Astro.props;
 ---
 
 <BaseLayout title={post.data.title} class="max-w-screen-md">
-  <div class="py-6">
-    <a
-      class="text-white bg-transparent text-gray-800 font-bold py-2 px-1 rounded inline-flex items-center"
-      href="/blog"
-    >
-      <ArrowBackwardIcon/>
-    </a>
+  <div class="py-8">
     <div class="pb-6">
       <Text variant="h1" class="pb-2 text-stone-100 sm:text-4xl">
         {post.data.title}
