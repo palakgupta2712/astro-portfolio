@@ -9,13 +9,13 @@ const { company, positions } = Astro.props;
 ---
 
 <div
-  class="cursor-default bg-stone-900 hover:bg-stone-800 transition duration-200 -mx-6 py-4 shadow-sm px-6 sm:rounded-xl"
+  class="cursor-default bg-stone-900 hover:bg-stone-800 transition duration-200 md:-mx-6 py-4 shadow-sm px-6 rounded-xl"
 >
   <Text variant="h3" class="text-neutral-100 text-xl font-semibold flex-1 pb-2">
     {company}
   </Text>
 
-  <div class="flex flex-col justify-center gap-2 w-max pt-1">
+  <div class="flex flex-col justify-center gap-2 md:w-max pt-1">
     {
       positions.map((position) => (
         <div class="group">
@@ -24,7 +24,7 @@ const { company, positions } = Astro.props;
               {position.title}
             </Text>
 
-            <Text variant="span" class="uppercase text-stone-400">
+            <Text variant="span" class="uppercase text-stone-400 break-words">
               {dayjs(position.duration.from).format("MMM YYYY")} -{" "}
               {position.isOnGoing
                 ? "Present"
@@ -36,7 +36,7 @@ const { company, positions } = Astro.props;
 
           <div class="ml-1 group-last:hidden py-2">
             <div class="w-1.5 h-1.5 rounded-full bg-stone-600 -translate-x-0.5" />
-            <div class="w-0.5 h-5 bg-stone-600 top-7" />
+            <div class="w-0.5 h-4 md:h-5 bg-stone-600 top-7" />
             <div class="w-1.5 h-1.5 rounded-full bg-stone-600 -translate-x-0.5" />
           </div>
         </div>
