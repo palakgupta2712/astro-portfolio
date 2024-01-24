@@ -18,7 +18,7 @@ const { title, post, ...props } = Astro.props;
 const pageTitle = title ? `${title} - ${USER}` : USER;
 const metaImage = post?.data.image.url || "/profile.png";
 const metaURL = post?.slug || "/";
-const metaDescription = post?.body?.slice(0, 20) || "Portfolio Website";
+const metaDescription = post?.body?.slice(0, 100) || "Portfolio Website";
 
 ---
 
