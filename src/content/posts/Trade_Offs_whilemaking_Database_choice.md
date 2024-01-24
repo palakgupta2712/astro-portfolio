@@ -1,7 +1,7 @@
 ---
 title: "Trade-Offs while making Database choice"
 pubDate: "2022-07-01"
-description: "This is the first post of my new Astro blog."
+description: "Things to consider while making database choice."
 author: "Astro Learner"
 image:
   url: "https://media.licdn.com/dms/image/D5612AQEsfUGkh-jPGA/article-cover_image-shrink_720_1280/0/1705135793611?e=1710979200&v=beta&t=iWtL_iTJ4KnTM0em2QDJ-D74i_LB7IfouMVylQ6znQE"
