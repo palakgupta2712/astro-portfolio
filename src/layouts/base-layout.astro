@@ -4,28 +4,40 @@ import { ViewTransitions } from "astro:transitions";
 import Navbar from "../components/header.astro";
 import "../styles/global.css";
 import { cn } from "@/utils/classname";
+import type { CollectionEntry } from "astro:content";
 
 type Props = {
   class?: string;
   title?: string;
+  post?: CollectionEntry<"posts">;
 };
 
 const USER = "Amit Prakash";
-const { title, ...props } = Astro.props;
+const { title, post, ...props } = Astro.props;
 
 const pageTitle = title ? `${title} - ${USER}` : USER;
+const metaImage = post?.data.image.url || "/profile.png";
+const metaURL = post?.slug || "/";
+const metaDescription = post?.body?.slice(0, 20) || "Portfolio Website";
+
 ---
 
 <html lang="en">
   <head>
     <meta charset="utf-8" />
-    <link
-      rel="icon"
-      type="image/svg+xml"
-      href="https://pbs.twimg.com/profile_images/1742955017676677122/SysiSnf2_400x400.jpg"
-    />
+    <link rel="icon" type="image/svg+xml" href="/profile.png" />
     <meta name="viewport" content="width=device-width" />
     <meta name="generator" content={Astro.generator} />
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content={metaDescription} />
+    <meta property="og:image:width" content="300" />
+    <meta property="og:image:height" content="300" />
+    <meta property="og:image" content={metaImage} />
+    <meta
+      property="og:url"
+      content={metaURL}
+    />
+    <meta property="og:type" content="website" />
     <title>{pageTitle}</title>
     <ViewTransitions />
   </head>

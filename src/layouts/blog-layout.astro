@@ -16,7 +16,7 @@ type Props = {
 const { post } = Astro.props;
 ---
 
-<BaseLayout title={post.data.title} class="max-w-screen-md">
+<BaseLayout title={post.data.title} post={post} class="max-w-screen-md">
   <div class="py-6">
     <a
       class="text-white bg-transparent text-gray-800 font-bold p-1 rounded inline-flex items-center  rounded-lg mb-3"
