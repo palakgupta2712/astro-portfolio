@@ -1,9 +1,10 @@
 import ReactIcon from "@/icons/projects/react-icon.astro";
 
- const PROJECTS = [
+ const PROJECTS  = [
     {
         title: 'Nuxt Playground',
         subtitle: 'Some cool fact',
+        link: 'https://google.com',
         icon: ReactIcon 
     }
 ]

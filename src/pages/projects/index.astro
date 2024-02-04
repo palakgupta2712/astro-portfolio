@@ -14,7 +14,7 @@ import PROJECTS from "@/constants/projects.ts"
     <div class="w-full flex gap-2 flex-wrap	items-center justify-center">
     {PROJECTS.map((project)=>{
       const icon = <project.icon class="fill-zinc-600 group-hover:fill-zinc-500 transition-colors duration-300"/>
-      return <ProjectCard title={project.title} subtitle={project.subtitle} icon={icon}/>
+      return <ProjectCard title={project.title} subtitle={project.subtitle} link={project.link} icon={icon}/>
     })}
   </div>
    
