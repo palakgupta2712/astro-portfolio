@@ -29,7 +29,13 @@ const groupedPosts = allPosts.reduce<
 
 const postEntries = Object.entries(groupedPosts).sort(
   (a, b) => Number(b[0]) - Number(a[0])
-);
+).map(([year, posts]) => [
+    year,
+    posts.sort(
+      (a, b) =>
+        new Date(b.data.pubDate).getTime() - new Date(a.data.pubDate).getTime()
+    ),
+  ]);
 ---
 
 <BaseLayout title={PAGE_TITLE}>

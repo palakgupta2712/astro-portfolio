@@ -1,0 +1,21 @@
+---
+const PAGE_TITLE = "All Open Source Contribution ";
+import BaseLayout from "@/layouts/base-layout.astro";
+import Text from "@/components/text.astro";
+
+---
+
+<BaseLayout title={PAGE_TITLE}>
+  
+      
+  <div class="max-w-screen-sm mx-auto py-8 sm:py-12 flex flex-col h-screen">
+    <Text variant="h1" class="text-stone-100 pb-4">
+      {PAGE_TITLE}
+    </Text>
+    <iframe
+      src="https://members.realdevsquad.com/tejas"
+      class="w-full h-full flex-1"
+    ></iframe>
+  </div>
+</BaseLayout>
+
