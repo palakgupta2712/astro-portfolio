@@ -1,9 +1,10 @@
 import ReactIcon from "@/icons/projects/react-icon.astro";
 
- const PROJECTS  = [
+
+const PAST_PROJECTS = [
     {
-        title: 'Nuget Package',
-        subtitle: 'Package to play with StRiNg cAsInG',
+        title: 'Nuget Package past',
+        subtitle: 'Package to play with sting casing',
         link: 'https://www.nuget.org/packages/AlternateCase',
         icon: ReactIcon 
     },
@@ -27,5 +28,4 @@ import ReactIcon from "@/icons/projects/react-icon.astro";
     }
 ]
 
-
-export default PROJECTS;
+export default PAST_PROJECTS;
