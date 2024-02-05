@@ -1,7 +1,12 @@
 ---
 const PAGE_TITLE = "Projects ";
 import BaseLayout from "@/layouts/base-layout.astro";
+import ProjectCard from "@/components/project-card.astro";
 import Text from "@/components/text.astro";
+import PROJECTS from "@/constants/projects.ts";
+import PROJECTS_CURRENTS from "@/constants/projects.ts";
+import PAST_PROJECTS from "@/constants/pastwork.ts"
+import PARKING_LOT from "@/constants/parking.ts"
 ---
 
 <BaseLayout title={PAGE_TITLE}>
@@ -9,14 +14,36 @@ import Text from "@/components/text.astro";
     <Text variant="h1" class="text-stone-100 pb-4">
       {PAGE_TITLE}
     </Text>
-
-<Text variant="p" class="text-stone-300 leading-relaxed">
-      This page is Under-Construction 😉😉😉
-    </Text>
-   
-<img src="https://i.pinimg.com/originals/ce/d2/d0/ced2d0cc1832708a6a1ee95df0e285a1.gif" alt="A photo of me" />
-   
-
+    <Text variant="h1" class="text-stone-10 pb-1" >
+      <p style="color:green">Current Focus</p>
+    </Text><br/>
+    <div class="w-full flex gap-2 flex-wrap	items-center justify-center">
+     
+    {PROJECTS.map((project)=>{
+      const icon = <project.icon class="fill-zinc-600 group-hover:fill-zinc-500 transition-colors duration-300"/>
+      return <ProjectCard title={project.title} subtitle={project.subtitle} link={project.link} icon={icon}/>
+    })}
+  </div>
+  <br/>
+  <Text variant="h1" class="text-stone-10 pb-1" >
+    <p style="color:orange">Parking Lot</p>
+  </Text><br/>
+  <div class="w-full flex gap-2 flex-wrap	items-center justify-center">
+    {PARKING_LOT.map((project)=>{
+      const icon = <project.icon class="fill-zinc-600 group-hover:fill-zinc-500 transition-colors duration-300"/>
+      return <ProjectCard title={project.title} subtitle={project.subtitle} link={project.link} icon={icon}/>
+    })}
+  </div>
+  <br/>
+  <Text variant="h1" class="text-stone-10 pb-1" >
+    <p style="color:white">Past Work</p>
+  </Text><br/>
+  <div class="w-full flex gap-2 flex-wrap	items-center justify-center">
+    {PAST_PROJECTS.map((project)=>{
+      const icon = <project.icon class="fill-zinc-600 group-hover:fill-zinc-500 transition-colors duration-300"/>
+      return <ProjectCard title={project.title} subtitle={project.subtitle} link={project.link} icon={icon}/>
+    })}
+  </div>
    
   </div>
 </BaseLayout>
