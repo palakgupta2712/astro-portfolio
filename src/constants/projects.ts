@@ -2,27 +2,27 @@ import ReactIcon from "@/icons/projects/react-icon.astro";
 
  const PROJECTS  = [
     {
-        title: 'Nuget Package',
-        subtitle: 'Package to play with StRiNg cAsInG',
-        link: 'https://www.nuget.org/packages/AlternateCase',
+        title: 'URL Shorter',
+        subtitle: 'URL Shorter',
+        link: 'https://staging-tinysite.realdevsquad.com',
         icon: ReactIcon 
     },
     {
-        title: 'Nuxt Playground',
-        subtitle: 'Some cool fact',
-        link: 'https://google.com',
+        title: 'Sill Tree',
+        subtitle: 'To map skill level for Tech and Non_tech People',
+        link: 'https://github.com/Real-Dev-Squad/skill-tree-backend',
         icon: ReactIcon 
     },
     {
-        title: 'Nuxt Playground',
-        subtitle: 'Some cool fact',
-        link: 'https://google.com',
+        title: 'Super Calendar App',
+        subtitle: 'Manage all your Calender Needs',
+        link: 'https://github.com/Real-Dev-Squad/website-calendar',
         icon: ReactIcon 
     },
     {
-        title: 'Nuxt Playground',
-        subtitle: 'Some cool fact',
-        link: 'https://google.com',
+        title: 'Discord Bot',
+        subtitle: 'Automating Discord Functions',
+        link: 'https://github.com/Real-Dev-Squad/discord-slash-commands',
         icon: ReactIcon 
     }
 ]
