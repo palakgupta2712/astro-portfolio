@@ -3,7 +3,7 @@ import ReactIcon from "@/icons/projects/react-icon.astro";
 
 const PAST_PROJECTS = [
     {
-        title: 'Nuget Package',
+        title: 'AlternateCase Nuget Package',
         subtitle: 'Package to play with StRiNg cAsInG',
         link: 'https://www.nuget.org/packages/AlternateCase',
         icon: ReactIcon 
@@ -21,9 +21,21 @@ const PAST_PROJECTS = [
         icon: ReactIcon 
     },
     {
-        title: 'Coupab Code Impletation via HasSet',
+        title: 'Coupon Code implementation via HashSet',
         subtitle: 'check whether a one time coupon has already been used. If so, a sui...',
         link: 'https://github.com/iamitprakash/Hash_Set_Coupons',
+        icon: ReactIcon 
+    },
+    {
+        title: 'Sample API Server in GO',
+        subtitle: 'Develop a Go server with two endpoints (/process-single and /process-concurrent)...',
+        link: 'https://github.com/iamitprakash/Go-Server-for-Sorting-Arrays',
+        icon: ReactIcon 
+    },
+    {
+        title: 'Bloom Filter in .Net',
+        subtitle: 'Created Bloom Filter in C#, .Net',
+        link: 'https://github.com/iamitprakash/bloom_filter_in_dot_net',
         icon: ReactIcon 
     }
 ]
