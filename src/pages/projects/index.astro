@@ -17,7 +17,7 @@ import PARKING_LOT from "@/constants/parking.ts"
     <Text variant="h1" class="text-stone-10 pb-1" >
       <p style="color:green">Current Focus</p>
     </Text><br/>
-    <div class="w-full flex gap-2 flex-wrap	items-center justify-center">
+    <div class="w-full flex gap-2 flex-wrap	items-center">
      
     {PROJECTS.map((project)=>{
       const icon = <project.icon class="fill-zinc-600 group-hover:fill-zinc-500 transition-colors duration-300"/>
@@ -28,7 +28,7 @@ import PARKING_LOT from "@/constants/parking.ts"
   <Text variant="h1" class="text-stone-10 pb-1" >
     <p style="color:orange">Parking Lot</p>
   </Text><br/>
-  <div class="w-full flex gap-2 flex-wrap	items-center justify-center">
+  <div class="w-full flex gap-2 flex-wrap	items-center ">
     {PARKING_LOT.map((project)=>{
       const icon = <project.icon class="fill-zinc-600 group-hover:fill-zinc-500 transition-colors duration-300"/>
       return <ProjectCard title={project.title} subtitle={project.subtitle} link={project.link} icon={icon}/>
@@ -38,7 +38,7 @@ import PARKING_LOT from "@/constants/parking.ts"
   <Text variant="h1" class="text-stone-10 pb-1" >
     <p style="color:white">Past Work</p>
   </Text><br/>
-  <div class="w-full flex gap-2 flex-wrap	items-center justify-center">
+  <div class="w-full flex gap-2 flex-wrap	items-center">
     {PAST_PROJECTS.map((project)=>{
       const icon = <project.icon class="fill-zinc-600 group-hover:fill-zinc-500 transition-colors duration-300"/>
       return <ProjectCard title={project.title} subtitle={project.subtitle} link={project.link} icon={icon}/>
