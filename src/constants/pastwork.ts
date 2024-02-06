@@ -9,7 +9,7 @@ const PAST_PROJECTS = [
         icon: ReactIcon 
     },
     {
-        title: 'Trabsmitting Int Data type in DB',
+        title: 'Transmitting Int Data type in DB',
         subtitle: 'Database Optimization',
         link: 'https://github.com/iamitprakash/transmit-integers-efficiently-using-varint-encoding',
         icon: ReactIcon 
