@@ -9,6 +9,12 @@ const PAST_PROJECTS = [
         icon: ReactIcon 
     },
     {
+        title: 'InvertBinaryTree Nuget Package',
+        subtitle: 'Package to Invert Binary Tree',
+        link: 'https://www.nuget.org/packages/InvertBinaryTree',
+        icon: ReactIcon 
+    }, 
+    {
         title: 'Transmitting Int Data type in DB',
         subtitle: 'Database Optimization',
         link: 'https://github.com/iamitprakash/transmit-integers-efficiently-using-varint-encoding',
