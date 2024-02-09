@@ -15,6 +15,18 @@ const PAST_PROJECTS = [
         icon: ReactIcon 
     }, 
     {
+        title: '[GO]Load Balancer',
+        subtitle: 'Tried to create an Intelligent Load Balancer',
+        link: 'https://github.com/iamitprakash/load-balancer-go',
+        icon: ReactIcon 
+    },
+    {
+        title: '[GO]Auth Server',
+        subtitle: 'Tried to create an Authentication Server to plug & Play into any Microservice Architecture',
+        link: 'https://github.com/iamitprakash/Auth-server-go',
+        icon: ReactIcon 
+    },
+    {
         title: 'Transmitting Int Data type in DB',
         subtitle: 'Database Optimization',
         link: 'https://github.com/iamitprakash/transmit-integers-efficiently-using-varint-encoding',
@@ -42,6 +54,12 @@ const PAST_PROJECTS = [
         title: 'Bloom Filter in .Net',
         subtitle: 'Created Bloom Filter in C#, .Net',
         link: 'https://github.com/iamitprakash/bloom_filter_in_dot_net',
+        icon: ReactIcon 
+    },
+    {
+        title: '[GO]Concurrent Thread safe Queue',
+        subtitle: 'An experiment to make Queue Thread safe',
+        link: 'https://github.com/iamitprakash/concurrent_thread_safe_queue',
         icon: ReactIcon 
     }
 ]
