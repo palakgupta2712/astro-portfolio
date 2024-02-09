@@ -8,7 +8,7 @@ import ReactIcon from "@/icons/projects/react-icon.astro";
         icon: ReactIcon 
     },
     {
-        title: 'Sill Tree',
+        title: 'Skill Tree',
         subtitle: 'To map skill level for Tech and Non_tech People',
         link: 'https://github.com/Real-Dev-Squad/skill-tree-backend',
         icon: ReactIcon 
