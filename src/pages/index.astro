@@ -212,7 +212,7 @@ const workDetails: TWork[] = [
     </Text>
 
     {
-      posts.slice(0, 3).map((post) => (
+      posts.sort((b,a)=> new Date(a.data.pubDate).getTime() - new Date(b.data.pubDate).getTime()).slice(0, 3).map((post) => (
         <div class="py-4 first:pt-0 last:pb-0 border-b border-gray-800 last:border-none hover:bg-stone-800">
           <Text variant="h4" class="text-stone-50 text-lg font-semibold pb-2">
             <Link
@@ -233,6 +233,8 @@ const workDetails: TWork[] = [
         </div>
       ))
     }
+    <br/>
+    <a  class="no-underline hover:underline w-max" href="/blog">Looks Instresting isn't It !! 😜 Click to Read more..😎</a>
   </div>
 
   <div class="pt-12 pb-8">
