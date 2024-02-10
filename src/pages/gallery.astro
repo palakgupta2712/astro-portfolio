@@ -1,0 +1,8 @@
+---
+import BaseLayout from "@/layouts/base-layout.astro";
+import { Gallery as GalleryComp } from "@/components/gallery";
+---
+
+<BaseLayout class="max-w-full">
+  <GalleryComp client:load />
+</BaseLayout>
