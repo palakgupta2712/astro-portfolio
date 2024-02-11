@@ -13,7 +13,7 @@ type TGallyStore = TGalleryStoreState & TGalleryStoreActions
 
 const useGalleryStore = create<TGallyStore>()((set) => ({
   showCarousel: false,
-  toggleCarousel: (showCarousel = false) => set({ showCarousel }),
+  toggleCarousel: (show) => set((state) => ({ showCarousel: show ?? !state.showCarousel })),
 }))
 
 type GalleryImageProps = {
@@ -26,7 +26,7 @@ export const GalleryItem = ({ path, children }: GalleryImageProps) => {
 
   return (
     <div onClick={() => {
-      toggleCarousel(true)
+      toggleCarousel()
       console.log("hello", path)
     }}>
       {children}
