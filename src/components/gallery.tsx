@@ -1,5 +1,17 @@
 import React, { useState, type ReactNode } from "react"
 
+type GalleryImageProps = {
+  children: ReactNode
+  path: string
+}
+
+export const GalleryItem = ({ path, children }: GalleryImageProps) => {
+  return (
+    <div onClick={() => console.log("hello", path)}>
+      {children}
+    </div>
+  )
+}
 
 type GalleryProps = {
   children: ReactNode
@@ -21,5 +33,3 @@ export const Gallery = ({ children }: GalleryProps) => {
     </div>
   )
 }
-
-// Gallery.Image = GalleryImage
