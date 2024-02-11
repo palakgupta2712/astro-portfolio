@@ -2,28 +2,36 @@
 const PAGE_TITLE = "Open Source Contribution ";
 import BaseLayout from "@/layouts/base-layout.astro";
 import Text from "@/components/text.astro";
-
 ---
 
 <BaseLayout title={PAGE_TITLE}>
-  
-  <a href="https://realdevsquad.com/" target="_blank"><img src="https://dashboard.realdevsquad.com/images/Real-Dev-Squad@1x.png" style="max-width: 10%;cursor: pointer;"> </a>
-  <div class="max-w-screen-sm mx-auto py-8 sm:py-12 flex flex-col h-screen">
-    <Text variant="h1" class="text-stone-100 pb-4">
-      {PAGE_TITLE}
-     <br/>
-     <div style="font-size: 10px; color:blue;">
-      <a href="https://members.realdevsquad.com/tejas" target="_blank">Click Here to Verify Below Details</a>
-     </div>
-     
-    </Text>
-    <Text>
-      
-    </Text>
-    <iframe
-      src="https://members.realdevsquad.com/tejas"
-      class="w-full h-full flex-1"
-    ></iframe>
-  </div>
-</BaseLayout>
+  <Text variant="h1" class="text-stone-100 pb-4">
+    {PAGE_TITLE}
+    </div>
+  </Text>
+  <div class="flex flex-col items-center justify-center gap-2">
+    <a
+      href="https://realdevsquad.com/"
+      target="_blank"
+      class="cursor:pointer "
+      ><img
+        src="https://dashboard.realdevsquad.com/images/Real-Dev-Squad@1x.png"
+      />
+    </a>
+    <a href="https://app.daily.dev/amitprakash" class="cursor:pointer " target="_blank"
+      ><img
+        src="https://api.daily.dev/devcards/602a61fc19eb4273ad137c4369c45ee5.png?r=s1c"
+        alt="Amit Prakash's Dev Card"
+      /></a
+    >
 
+    <a
+      href="https://www.wearedotnet.io/"
+      target="_blank"
+      class="cursor:pointer "
+      >
+    <img src="/bio-card.png" class="cursor:pointer" />
+    </a>
+  </div>
+
+</BaseLayout>
