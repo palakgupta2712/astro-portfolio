@@ -1,1 +1,0 @@
-import"./hoisted.3pGXzXIl.js";const e=document.getElementById("copy-button"),t=document.getElementById("copy-button-container");e&&t&&e.addEventListener("click",()=>{navigator.clipboard.writeText("contact@amitprakash.me"),t.dataset.linkcopied="true",setTimeout(()=>{t.dataset.linkcopied="false"},1500)});
