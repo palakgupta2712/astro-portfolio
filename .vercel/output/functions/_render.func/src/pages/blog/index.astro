@@ -1,0 +1,98 @@
+---
+import { getCollection, type CollectionEntry } from "astro:content";
+import dayjs from "dayjs";
+
+import Text from "@/components/text.astro";
+import Link from "@/components/link.astro";
+import LinkedInSubscriptionButton from "@/components/linkedin-subscription-button.astro";
+
+import BaseLayout from "@/layouts/base-layout.astro";
+
+const allPosts = await getCollection("posts");
+const PAGE_TITLE =  "hello visitor 👋";
+
+const groupedPosts = allPosts.reduce<
+  Record<string, CollectionEntry<"posts">[]>
+>((acc, curr) => {
+  const publishedYear = new Date(curr.data.pubDate).getFullYear();
+
+  if (!acc[publishedYear]) {
+    return {
+      ...acc,
+      [publishedYear]: [curr],
+    };
+  }
+
+  acc[publishedYear].push(curr);
+  return acc;
+}, {});
+
+const postEntries: Array<[string, CollectionEntry<"posts">[]]> = Object.entries(
+  groupedPosts
+)
+  .sort((a, b) => Number(b[0]) - Number(a[0]))
+  .map((entry) => [
+    entry[0],
+    entry[1].sort(
+      (a, b) =>
+        new Date(b.data.pubDate).getTime() - new Date(a.data.pubDate).getTime()
+    ),
+  ]);
+---
+
+<BaseLayout title={PAGE_TITLE}>
+  <div class="max-w-screen-sm mx-auto py-8 sm:py-12">
+    <Text variant="h1" class="text-stone-100 pb-4">
+      {PAGE_TITLE}
+    </Text>
+
+    <Text variant="p" class="text-stone-300 leading-relaxed">
+      welcome to my area of the internet, I document my weekly journey through
+      the trenches of enterprise application development, system design, and
+      performance optimization. I share my ups and downs (mostly wins!) in
+      various formats, including blog posts here and LinkedIn newsletters. Dive
+      into some of my favorite exploits below !
+    </Text>
+
+    <div class="py-2">
+      <LinkedInSubscriptionButton />
+    </div>
+
+    <div class="py-20 sm:py-24">
+      {
+        postEntries.map((entries) => (
+          <div class="relative pb-24 last:pb-0">
+            <div class="absolute -top-16 -left-10 -z-10">
+              <Text class="text-transparent text-[100px] font-extrabold [-webkit-text-stroke-color:rgb(170_170_170_/_0.15)] [-webkit-text-stroke-width:2px]">
+                {entries[0]}
+              </Text>
+            </div>
+
+            <ul>
+              {entries[1].map((entry) => (
+                <li class="text-stone-100">
+                  <div class="py-4 space-y-2">
+                    <Link
+                      to={`blog/${entry.slug}`}
+                      class="no-underline hover:underline transition-all"
+                    >
+                      <Text variant="h3">{entry.data.title}</Text>
+                    </Link>
+
+                    <div class="text-stone-400 flex items-center gap-2">
+                      <Text variant="span">
+                        {dayjs(entry.data.pubDate).format("DD MMM")}
+                      </Text>
+                      <div class="w-1 h-1 bg-stone-600 rounded-full" />
+                      <Text variant="span">5 min read</Text>
+                    </div>
+                  </div>
+                </li>
+              ))}
+            </ul>
+          </div>
+        ))
+      }
+    </div>
+  </div>
+</BaseLayout>

@@ -1,0 +1,1 @@
+import"./hoisted.3pGXzXIl.js";const o="/resume.pdf",d=document.getElementById("resume-download-button");d&&d.addEventListener("click",n);function n(){const e=document.createElement("a");e.href=o,e.download="Amit Prakash Resume.pdf",document.body.appendChild(e),e.click(),document.body.removeChild(e)}
