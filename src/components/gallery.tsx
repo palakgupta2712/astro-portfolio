@@ -77,14 +77,14 @@ const Carousel = () => {
 
   return (
     <div className="fixed inset-0 w-full h-full">
-      <div className="w-full h-full z-[100] relative flex flex-col p-20">
-        <div className="absolute inset-0 w-full h-full bg-black/80 backdrop-blur-sm z-50" onClick={() => toggleCarousel(false)} />
+      <div className="w-full h-full z-[100] relative grid place-items-center">
+        <div className="absolute inset-0 w-full h-full bg-black/80 backdrop-blur z-50" onClick={() => toggleCarousel(false)} />
 
         <div className="max-w-7xl mx-auto flex-1 relative z-[100]">
-          <img src={images[activeImageIdx]?.metadata.src} className="w-max max-w-full h-auto aspect-video object-contain" />
+          <img src={images[activeImageIdx]?.metadata.src} className="w-full md:w-max max-w-full h-auto aspect-video object-contain" />
         </div>
 
-        <div className="relative z-[100] w-max mx-auto flex items-center text-white justify-center gap-4">
+        <div className="absolute bottom-16 left-1/2 -translate-x-1/2 z-[100] w-max mx-auto flex items-center text-white justify-center gap-4">
           <button className="p-3" onClick={() => setActiveImageIdx(activeImageIdx <= 0 ? 0 : activeImageIdx - 1)}>prev</button>
           <button className="p-3" onClick={() => setActiveImageIdx(activeImageIdx >= images.length - 1 ? activeImageIdx : activeImageIdx + 1)}>next</button>
         </div>
@@ -100,7 +100,7 @@ type GalleryProps = {
 export const Gallery = ({ children }: GalleryProps) => {
   return (
     <div>
-      <div className="grid grid-cols-3 gap-4 py-8">
+      <div className="grid grid-cols-1 md:grid-cols-3 gap-4 py-8">
         {children}
       </div>
 
