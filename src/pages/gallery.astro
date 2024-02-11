@@ -14,7 +14,7 @@ const images = import.meta.glob<{ default: ImageMetadata }>(
   <GalleryWrapper client:load>
     {
       Object.entries(images).map((image, index) => (
-        <GalleryItem client:load path={image[0]}>
+        <GalleryItem client:load index={index}>
           <GalleryImage image={image[1]()} altText={`${index}.alt`} />
         </GalleryItem>
       ))

@@ -1,13 +1,16 @@
 ---
-import type { ImageMetadata } from "astro";
 import { Image } from "astro:assets";
+import type { ImageMetadata } from "astro";
+
+import { cn } from "@/utils/classname";
 
 type Props = {
-  image: Promise<{ default: ImageMetadata }>;
   altText: string;
+  class?: string;
+  image: Promise<{ default: ImageMetadata }>;
 };
 
-const { image, altText } = Astro.props;
+const { image, altText, ...props } = Astro.props;
 
 if (!image)
   throw new Error(
@@ -15,6 +18,4 @@ if (!image)
   );
 ---
 
-<div class="bg-gray-500 w-80">
-  <Image src={image} alt={altText} />
-</div>
+<Image src={image} alt={altText} class={cn("w-full h-auto", props.class)} />
