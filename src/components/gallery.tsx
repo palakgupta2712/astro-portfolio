@@ -77,7 +77,7 @@ const Carousel = () => {
 
   return (
     <div className="fixed inset-0 w-full h-full">
-      <div className="w-full h-full z-[100] relative flex flex-col p-24">
+      <div className="w-full h-full z-[100] relative flex flex-col p-20">
         <div className="absolute inset-0 w-full h-full bg-black/80 backdrop-blur-sm z-50" onClick={() => toggleCarousel(false)} />
 
         <div className="max-w-7xl mx-auto flex-1 relative z-[100]">
