@@ -1,8 +1,21 @@
 ---
+import type { ImageMetadata } from "astro";
+
 import BaseLayout from "@/layouts/base-layout.astro";
 import { Gallery as GalleryComp } from "@/components/gallery";
+import GalleryImage from "@/components/gallery-image.astro";
+
+const images = import.meta.glob<{ default: ImageMetadata }>(
+  "/src/assets/gallery/*.{jpeg,jpg,png}"
+);
 ---
 
 <BaseLayout class="max-w-full">
-  <GalleryComp client:load />
+  <GalleryComp client:load>
+    {
+      Object.entries(images).map((image, index) => (
+        <GalleryImage image={image[1]()} altText={`${index}.alt`} />
+      ))
+    }
+  </GalleryComp>
 </BaseLayout>
