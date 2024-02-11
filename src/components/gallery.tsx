@@ -1,4 +1,20 @@
-import React, { useState, type ReactNode } from "react"
+import React, { useState, type ReactNode, useContext } from "react"
+import { create } from 'zustand'
+
+type TGalleryStoreState = {
+  showCarousel: boolean
+}
+
+type TGalleryStoreActions = {
+  toggleCarousel: (showCarousel?: boolean) => void
+}
+
+type TGallyStore = TGalleryStoreState & TGalleryStoreActions
+
+const useGalleryStore = create<TGallyStore>()((set) => ({
+  showCarousel: false,
+  toggleCarousel: (showCarousel = false) => set({ showCarousel }),
+}))
 
 type GalleryImageProps = {
   children: ReactNode
@@ -6,8 +22,13 @@ type GalleryImageProps = {
 }
 
 export const GalleryItem = ({ path, children }: GalleryImageProps) => {
+  const { toggleCarousel } = useGalleryStore()
+
   return (
-    <div onClick={() => console.log("hello", path)}>
+    <div onClick={() => {
+      toggleCarousel(true)
+      console.log("hello", path)
+    }}>
       {children}
     </div>
   )
@@ -19,6 +40,8 @@ type GalleryProps = {
 
 export const Gallery = ({ children }: GalleryProps) => {
   const [count, setCount] = useState(0)
+  const { showCarousel } = useGalleryStore()
+  console.log(showCarousel)
 
   return (
     <div className="text-gray-50 space-x-4">
