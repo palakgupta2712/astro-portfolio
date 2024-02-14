@@ -9,7 +9,7 @@ image:
 tags: ["#PreflightParty", "#hashtag#SecurityFirst", "#hashtag#DataHarmony", "#hashtag#NoMoreWebWalls"]
 ---
 
-Here is how hashtag#typical application* looks like 
+Here is how **typical** application looks like 
 
 ![Alt text](https://media.licdn.com/dms/image/D5612AQH5NZghzx2vsw/article-inline_image-shrink_1500_2232/0/1674672858676?e=1713398400&v=beta&t=wcP-T3cAM_AD0UJ1guTtJFAPjjPEUChfNuYLnXeIRNA)
 
