@@ -1,7 +1,7 @@
 ---
-title: "Scaled to Millions with Google Sheets as Backend - levels.fyi"
+title: "How to Calculate Performance or Capacity of System"
 pubDate: "2023-03-05"
-description: "Scaled to Millions with Google Sheets as Backend - levels.fyi"
+description: "How to Calculate Performance or Capacity of System"
 author: "Amit Prakash"
 image:
   url: "https://media.licdn.com/dms/image/D5612AQGrayCHWiosMA/article-cover_image-shrink_720_1280/0/1698432612831?e=1713398400&v=beta&t=CtGMhhrqzvKZf3r0VPykz0wmhby_FagOE5YIjieDEEQ"
