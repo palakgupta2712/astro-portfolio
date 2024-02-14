@@ -1,6 +1,6 @@
 ---
 title: "Orchestration or Choreography- A Microservice Game Play"
-pubDate: "2024-02-07"
+pubDate: "2023-02-07"
 description: "Orchestration or Choreography- A Microservice Game Play"
 author: "Amit Prakash"
 image:
