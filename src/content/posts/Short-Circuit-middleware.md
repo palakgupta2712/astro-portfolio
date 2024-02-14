@@ -1,5 +1,5 @@
 ---
-title: "IRoute Short Circuit middleware in ASP.NET Core"
+title: "Route Short Circuit middleware in ASP.NET Core"
 pubDate: "2023-11-02"
 description: "Bots and browsers frequently search servers for popular routes like favicon.ico. The middleware pipeline typically completes a request before returning a 404 error."
 author: "Amit Prakash"
