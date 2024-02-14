@@ -9,7 +9,9 @@ image:
 tags: ["#PreflightParty", "#hashtag#SecurityFirst", "#hashtag#DataHarmony", "#hashtag#NoMoreWebWalls"]
 ---
 
-Since the beginning of C#, dates and times have been handled by the **DateTime** struct, which may be used for either purpose. When two needs may be satisfied by one solution, trade-offs are frequently made, as is the case with the majority of software development decisions. When it comes to DateTime, this often means that even while we put up a whole DateTime instance, we frequently just care about the date component or the time component, but very seldom both.
+<span style="color:orange">Since the beginning of C#, dates and times have been handled by the **DateTime** struct, which may be used for either purpose. When two needs may be satisfied by one solution, trade-offs are frequently made, as is the case with the majority of software development decisions. When it comes to DateTime, this often means that even while we put up a whole DateTime instance, we frequently just care about the date component or the time component, but very seldom both.</span>
+
+
 Now new Release with .Net6, we have two additional (grate job Microsoft)
 1. DateOnly
 2. TimeOnly
@@ -50,4 +52,5 @@ var _myTime= new TimeOnly(5,0)
 var _thisNewsLetterEditionTime= TimeOnly.FromDateTime(DateTime.UtcNow);
 
 
-```
+``` 
+💡

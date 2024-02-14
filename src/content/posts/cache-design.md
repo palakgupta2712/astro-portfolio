@@ -9,7 +9,7 @@ image:
 tags: ["#PreflightParty", "#hashtag#SecurityFirst", "#hashtag#DataHarmony", "#hashtag#NoMoreWebWalls"]
 ---
 
-Here is how **typical** application looks like 
+<span style="color:orange">Here is how **typical** application looks like.</span>
 
 ![Alt text](https://media.licdn.com/dms/image/D5612AQH5NZghzx2vsw/article-inline_image-shrink_1500_2232/0/1674672858676?e=1713398400&v=beta&t=wcP-T3cAM_AD0UJ1guTtJFAPjjPEUChfNuYLnXeIRNA)
 
@@ -36,4 +36,4 @@ Because the majority of cache servers offer APIs in a broad variety of languages
 
 4. **Mitigating Failures**: A single cache server represents a potential Single point of Failure(SPOF).
 
-5. **Eviction Policy**: Any requests to add things to the cache after it is full may result in the removal of already-existing items. Most people like the LRU (Least-Recently-Used) eviction policy. For a variety of use cases, other eviction rules, such as LFU (Least-Frequently-Used) or FIFO (First in First out), can be used.
+5. **Eviction Policy**: Any requests to add things to the cache after it is full may result in the removal of already-existing items. Most people like the LRU (Least-Recently-Used) eviction policy. For a variety of use cases, other eviction rules, such as LFU (Least-Frequently-Used) or FIFO (First in First out), can be used.💡

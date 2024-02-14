@@ -9,7 +9,7 @@ image:
 tags: ["#PreflightParty", "#hashtag#SecurityFirst", "#hashtag#DataHarmony", "#hashtag#NoMoreWebWalls"]
 ---
 
-LSM Tree: Write Like the Wind, Read with a Pause
+<span style="color:orange">LSM Tree: Write Like the Wind, Read with a Pause.</span>
 
 Imagine lightning-fast writes, like scribbling in a notepad. That's an LSM tree. It prioritizes write speed by storing new data in temporary, in-memory structures. No slow disk writes slowing you down. But reading isn't as immediate. Think back to flipping through that notepad – not exactly quick for finding specific notes. LSM trees need to periodically merge these notes into sorted files on disk, a process called compaction, to optimize for later reads.
 
@@ -180,5 +180,4 @@ Efficiency: Once compacted, B+ trees offer space-efficient data storage. No dupl
 
 Ultimately, the choice is yours. Consider your application's priorities. Need nimble writes over instant reads? The LSM tree beckons. Crave quick searches and predictable performance? The B+ tree awaits. Choose your champion wisely, and your database will be a champion in its own right.
 
-Remember, there's no one-size-fits-all solution. So, explore, experiment, and let the data structure duel guide you to the perfect fit for your database needs!
-
+Remember, there's no one-size-fits-all solution. So, explore, experiment, and let the data structure duel guide you to the perfect fit for your database needs!💡

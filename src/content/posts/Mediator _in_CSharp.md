@@ -9,7 +9,7 @@ image:
 tags: ["astro", "blogging", "learning in public"]
 ---
 
-For a while think about a bustling marketplace, brimming with vendors hawking their wares. To get what you need, you have to weave through the throng, shouting your requests to each booth. It's loud, confusing, and frankly, not very efficient. Now picture this: a central plaza with a town crier. You simply tell the crier what you're looking for, and they relay it to everyone. Order emerges from chaos, and you leave with your prize much faster.
+<span style="color:orange">For a while think about a bustling marketplace, brimming with vendors hawking their wares. To get what you need, you have to weave through the throng, shouting your requests to each booth. It's loud, confusing, and frankly, not very efficient. Now picture this: a central plaza with a town crier. You simply tell the crier what you're looking for, and they relay it to everyone. Order emerges from chaos, and you leave with your prize much faster.</span>
 
 That's the magic of the Mediator pattern in software development. This is a behavioural design pattern that lowers dependency between programme components by having them communicate indirectly via a particular mediator object. Individual components can be easily modified, extended, and reused thanks to the Mediator, which eliminates their reliance on dozens of other classes.
 
@@ -286,4 +286,4 @@ Benefits:
 
 1. Mediator can become a central point of complexity.
 2. Overuse can lead to a God object anti-pattern.
-3. Use judiciously when benefits outweigh potential drawbacks.
+3. Use judiciously when benefits outweigh potential drawbacks. 💡

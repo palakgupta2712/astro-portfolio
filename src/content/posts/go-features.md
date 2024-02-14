@@ -9,7 +9,7 @@ image:
 tags: ["#PreflightParty", "#hashtag#SecurityFirst", "#hashtag#DataHarmony", "#hashtag#NoMoreWebWalls"]
 ---
 
-When I was doing data mapping with many (relational) databases and tables with a lot of data in each table, I encountered a typical issue.
+<span style="color:orange">When I was doing data mapping with many (relational) databases and tables with a lot of data in each table, I encountered a typical issue.</span>
 
 I was, in essence, mapping smart databases for ML modelling.
 
@@ -31,4 +31,4 @@ As I dug deeper into the language, I discovered some elegance in hashtag#Go that
 
 6. **Optimized for Multi-Core processors**: Go's runtime and concurrency model are optimized for modern multi-core processors, making it well-suited for running on servers or other high-performance systems.
 
-Last but not least, all these features combined make Go a performant and efficient choice for systems that require high scalability and concurrency, such as network services and web servers.
+Last but not least, all these features combined make Go a performant and efficient choice for systems that require high scalability and concurrency, such as network services and web servers.💡

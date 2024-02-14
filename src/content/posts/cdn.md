@@ -9,7 +9,7 @@ image:
 tags: ["#PreflightParty", "#hashtag#SecurityFirst", "#hashtag#DataHarmony", "#hashtag#NoMoreWebWalls"]
 ---
 
-Geo graphically dispersed servers (Edge, Shield & Origin) used to deliver static content, CDN is a cache itself and it stores images, gifs, Videos, script files..... etc. Content is served from edge server near to user.
+<span style="color:orange">Geo graphically dispersed servers (Edge, Shield & Origin) used to deliver static content, CDN is a cache itself and it stores images, gifs, Videos, script files..... etc. Content is served from edge server near to user.</span>
 
 We do have another concept for Dynamic content caching that GIFY is using, we will understand at the end of this edition via example.
 
@@ -75,4 +75,4 @@ v1/gif/happyface.gif
 // Response Configured caching is an another interesting topic 
 ```
 
-### That's the wrap now for CDN.
+### That's the wrap now for CDN. 💡

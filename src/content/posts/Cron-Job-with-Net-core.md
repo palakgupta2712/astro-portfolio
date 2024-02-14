@@ -9,7 +9,7 @@ image:
 tags: ["#PreflightParty", "#hashtag#SecurityFirst", "#hashtag#DataHarmony", "#hashtag#NoMoreWebWalls"]
 ---
 
-A cron job is a task that is scheduled to run periodically at a fixed time, date, or interval. Cron jobs are often used to automate system maintenance or administration tasks, such as backing up files, updating software, or generating reports.
+<span style="color:orange">A cron job is a task that is scheduled to run periodically at a fixed time, date, or interval. Cron jobs are often used to automate system maintenance or administration tasks, such as backing up files, updating software, or generating reports.</span>
 
 Cron jobs are defined using a cron expression, which is a string that specifies the schedule on which the job should run. Cron expressions are made up of five or six fields, each of which represents a different unit of time: minute, hour, day of month, month, day of week, and year.
 
@@ -144,4 +144,4 @@ Here are 5 reasons why you should love cron jobs:
 2. They're reliable and scalable. Cron jobs have been around for decades, and they're used by some of the biggest and busiest companies in the world.
 3. They're free and open source. There are many different cron job implementations available, but they all work the same way.
 4. They can automate just about anything. From backing up files to deploying software, cron jobs can help you automate all of your DevOps tasks.
-5. They save you time and headaches. By automating your tasks, you can focus on more important things, like building new features and improving your systems. 
+5. They save you time and headaches. By automating your tasks, you can focus on more important things, like building new features and improving your systems. 💡

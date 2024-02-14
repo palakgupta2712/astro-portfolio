@@ -8,7 +8,7 @@ image:
   alt: "The full Astro logo."
 tags: ["#PreflightParty", "#hashtag#SecurityFirst", "#hashtag#DataHarmony", "#hashtag#NoMoreWebWalls"]
 ---
-Ever felt like merging two star ingredients from different kitchens to create a culinary masterpiece? Combining projects built on different .NET frameworks can feel similar – exciting possibilities mixed with a dash of complexity. While technically possible, mixing .NET Framework 4.8 and .NET Core 6 in the same solution requires careful planning and some clever maneuvering.
+<span style="color:orange">Ever felt like merging two star ingredients from different kitchens to create a culinary masterpiece? Combining projects built on different .NET frameworks can feel similar – exciting possibilities mixed with a dash of complexity. While technically possible, mixing .NET Framework 4.8 and .NET Core 6 in the same solution requires careful planning and some clever maneuvering.</span>
 
 Why Mix Frameworks?
 
@@ -49,4 +49,4 @@ Taming the Mix:
 Prioritize .NET Core: If starting fresh, embrace .NET Core's cross-platform magic.
 Gradual Migration: Migrate components in phases, starting with smaller, less critical parts.
 Document Everything: Be the chef who leaves detailed notes – document your architecture, limitations, and workarounds.
-Mixing .NET frameworks can be a rewarding adventure, but approach it with caution and careful planning. Remember, sometimes a single, well-seasoned framework might create the most delectable dish.
+Mixing .NET frameworks can be a rewarding adventure, but approach it with caution and careful planning. Remember, sometimes a single, well-seasoned framework might create the most delectable dish.💡

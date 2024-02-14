@@ -9,7 +9,7 @@ image:
 tags: ["#PreflightParty", "#hashtag#SecurityFirst", "#hashtag#DataHarmony", "#hashtag#NoMoreWebWalls"]
 ---
 
-Imagine the internet as a sprawling metropolis, bustling with websites, each its own sovereign domain. While information exchange fuels this city's lifeblood, strict border controls govern how data passes between domains. This, in essence, is the reality of Cross-Origin Resource Sharing (CORS). Today, we embark on a journey to understand this intricate system, focusing on its ever-present gatekeeper: the preflight call.
+<span style="color:orange">Imagine the internet as a sprawling metropolis, bustling with websites, each its own sovereign domain. While information exchange fuels this city's lifeblood, strict border controls govern how data passes between domains. This, in essence, is the reality of Cross-Origin Resource Sharing (CORS). Today, we embark on a journey to understand this intricate system, focusing on its ever-present gatekeeper: the preflight call.</span>
 
 Picture a scenario where your favorite recipe website wants to integrate a temperature conversion tool from another domain. Without CORS, this seemingly simple task becomes a security nightmare. The browser, acting as a vigilant protector, raises its shield, fearing rogue websites hijacking user data or manipulating resources. It's a potential Wild West of digital chaos.
 
@@ -34,4 +34,4 @@ At the end
 ## This extra step might seem annoying, but it's crucial for security:
 1. It prevents malicious websites from stealing data or manipulating resources they shouldn't.
 2. It ensures only authorized sources can access cross-origin resources.
-with its preflight call as its loyal champion, stands as the guardian of cross-domain data exchange. It fosters a web where resources flow freely, yet securely, connecting websites in a tapestry of collaboration and innovation. As we navigate the ever-evolving digital landscape, remembering the principles of CORS and appreciating the power of the preflight call will guide us towards a web built on trust, security, and limitless possibilities.
+with its preflight call as its loyal champion, stands as the guardian of cross-domain data exchange. It fosters a web where resources flow freely, yet securely, connecting websites in a tapestry of collaboration and innovation. As we navigate the ever-evolving digital landscape, remembering the principles of CORS and appreciating the power of the preflight call will guide us towards a web built on trust, security, and limitless possibilities.💡

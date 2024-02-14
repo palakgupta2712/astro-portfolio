@@ -77,5 +77,4 @@ if ok {
 }
 ```
 
-*Last but not least*: Concurrent thread safe queues are a valuable tool for developing multithreaded applications. They can help to improve performance, reduce contention, and improve reliability. If you need to share data between multiple threads in a multithreaded application, you should consider using a concurrent thread safe queue.
-
+*Last but not least*: Concurrent thread safe queues are a valuable tool for developing multithreaded applications. They can help to improve performance, reduce contention, and improve reliability. If you need to share data between multiple threads in a multithreaded application, you should consider using a concurrent thread safe queue. 💡

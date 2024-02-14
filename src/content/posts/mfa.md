@@ -9,7 +9,7 @@ image:
 tags: ["#PreflightParty", "#hashtag#SecurityFirst", "#hashtag#DataHarmony", "#hashtag#NoMoreWebWalls"]
 ---
 
-MFA stands for "Multi Factor Authentication"
+<span style="color:orange">MFA stands for "Multi Factor Authentication".</span>
 
 ### The key principles behind MFA are
 
@@ -37,4 +37,4 @@ The crossover error rate is the location where the FRR and FAR intersect (CER). 
 ## Bonus is Location Factor
 Although it is uncommon, dial-up remote access has employed location-based authentication as an additional authentication factor. Consider hashtag#Amit having the ability to connect to work-based resources utilising a dial-in remote access connection while working from home. Once hashtag#Amit calls in and authenticates, the remote access server can be set up so that it hangs up and dials hashtag#Amit's home computer.
 
-As long as *Amit* tries to connect from his home computer, the connection will be successful. But if a hacker tried to sign in as Joe using *Amit's* username and password, they couldn't succeed. Once the attacker had successfully authenticated using *Amit's* credentials, the remote access server would hang up and try to reach *Amit's* workstation.
+As long as *Amit* tries to connect from his home computer, the connection will be successful. But if a hacker tried to sign in as Joe using *Amit's* username and password, they couldn't succeed. Once the attacker had successfully authenticated using *Amit's* credentials, the remote access server would hang up and try to reach *Amit's* workstation.💡

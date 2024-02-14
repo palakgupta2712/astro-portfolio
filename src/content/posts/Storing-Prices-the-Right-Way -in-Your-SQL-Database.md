@@ -9,7 +9,7 @@ image:
 tags: ["#PreflightParty", "#hashtag#SecurityFirst", "#hashtag#DataHarmony", "#hashtag#NoMoreWebWalls"]
 ---
 
-In the lifeblood of commerce, the bane of our wallets, and the data point causing endless confusion when it comes to storage. Should you store them as-is, or convert them to the lowest fraction of the currency? Fear not, fellow data enthusiasts, for this 5-minute guide will demystify the best ways to store prices in your SQL database!
+<span style="color:orange">In the lifeblood of commerce, the bane of our wallets, and the data point causing endless confusion when it comes to storage. Should you store them as-is, or convert them to the lowest fraction of the currency? Fear not, fellow data enthusiasts, for this 5-minute guide will demystify the best ways to store prices in your SQL database!</span>
 
 ## Data Type Dilemma: DECIMAL vs. NUMERIC
 
@@ -74,4 +74,4 @@ At the End:
 
 7. Think about future use cases.
 
-By following these tips, you'll store your prices like a pro, ensuring accurate calculations and happy customers (or investors, if you're into that). So, go forth and conquer the world of SQL pricing, one decimal point at a time!
+By following these tips, you'll store your prices like a pro, ensuring accurate calculations and happy customers (or investors, if you're into that). So, go forth and conquer the world of SQL pricing, one decimal point at a time!💡

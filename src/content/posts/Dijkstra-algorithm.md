@@ -9,7 +9,7 @@ image:
 tags: ["#PreflightParty", "#hashtag#SecurityFirst", "#hashtag#DataHarmony", "#hashtag#NoMoreWebWalls"]
 ---
 
-Dijkstra's algorithm is a greedy algorithm for finding the shortest path from a single source node to all other nodes in a weighted graph. It is one of the most important algorithms in data structures and algorithms (DSA), and has many applications in real-world problems.
+<span style="color:orange">Dijkstra's algorithm is a greedy algorithm for finding the shortest path from a single source node to all other nodes in a weighted graph. It is one of the most important algorithms in data structures and algorithms (DSA), and has many applications in real-world problems.</span>
 
 Dijkstra's algorithm works by maintaining a set of visited nodes and a set of unvisited nodes. It starts at the source node and iteratively selects the unvisited node with the smallest tentative distance from the source. It then visits the neighbors of this node and updates their tentative distances if a shorter path is found.
 
@@ -229,4 +229,4 @@ Here are some examples of how Dijkstra's algorithm can be used in real-world pro
 3. Finding the most efficient way to schedule tasks
 4. Finding the best way to allocate resources
 
-Dijkstra's algorithm is a powerful and versatile algorithm that is essential for any data structures and algorithms student to know.
+Dijkstra's algorithm is a powerful and versatile algorithm that is essential for any data structures and algorithms student to know.💡

@@ -9,7 +9,7 @@ image:
 tags: ["astro", "blogging", "learning in public"]
 ---
 
-In the fast-paced world of online transactions, speed and reliability are king. That's where the TPC-C benchmark comes in – a rigorous test designed to crown the champions of transaction processing performance.
+<span style="color:orange">In the fast-paced world of online transactions, speed and reliability are king. That's where the TPC-C benchmark comes in – a rigorous test designed to crown the champions of transaction processing performance. </span>
 
 TPC-C is an OLTP (online transaction processing) benchmark that combines read-only and update transactions to simulate common application workloads.
 
@@ -26,3 +26,4 @@ A good TPC-C score translates to real-world benefits like faster order processin
 Of course, no benchmark is perfect. TPC-C has been around for a while, and some argue it doesn't fully capture the complexities of modern workloads. But its simplicity and wide adoption make it a valuable tool for benchmarking and comparison.
 
 So, next time you click "Buy Now" or check your bank balance, remember the invisible heroes behind the scenes – the databases and systems that power those lightning-fast transactions. And if you're curious about who sits atop the throne of performance, just look up the latest TPC-C results – they'll tell you who the transaction processing titans truly are.
+💡

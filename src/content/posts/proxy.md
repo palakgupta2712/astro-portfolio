@@ -48,4 +48,3 @@ For a use case like that produces its own data, a reverse proxy might be more he
 ## At the End
 
 One should go and select the kind of proxy solution that is appropriate for your organisation/business based on the target data for your company as well as the data lakes that may be potentially at risk. A "traditional proxy" can handle simple, easy requests properly, however businesses with internal or externally facing data may want to employ a reverse proxy. A third-party technology or solution that assumes this obligation and establishes a safety barrier may also be used by businesses that want to collect data in various ways and keep it as secure as feasible in the cloud. 💡
-

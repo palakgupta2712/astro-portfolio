@@ -11,7 +11,7 @@ tags: ["astro", "blogging", "learning in public"]
 
 ## Happy 2024! May your code compile clean and your bandwidth be boundless.
 
-In terms of distributed system complexity, we built a distributed system for a client that acts as if it has shared storage, comparable to a single node system architecture. Communication and message passing are abstracted away and take place behind the scenes in the internode. This always gives the impression of a shared memory. 
+<span style="color:orange">In terms of distributed system complexity, we built a distributed system for a client that acts as if it has shared storage, comparable to a single node system architecture. Communication and message passing are abstracted away and take place behind the scenes in the internode. This always gives the impression of a shared memory. </span>
 
 A register is a single unit of storage that can be accessed via read or write operations. A distributed database's shared memory can be viewed as an array of such registers.
 
@@ -31,4 +31,4 @@ Multiple readers or writers can access the register at the same time. Register r
 ## Key takeaways:
 1. Registers have limitations in terms of speed and concurrent access.
 2. Register behavior under concurrent operations is crucial for multi-process systems.
-3. Understanding register types is essential for choosing the appropriate one for a given application.
+3. Understanding register types is essential for choosing the appropriate one for a given application.💡

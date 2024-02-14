@@ -9,7 +9,7 @@ image:
 tags: ["#PreflightParty", "#hashtag#SecurityFirst", "#hashtag#DataHarmony", "#hashtag#NoMoreWebWalls"]
 ---
 
-This is a new feature in .NET 8 that allows you to bypass the middleware pipeline for certain endpoints. This can be useful for improving performance, especially for endpoints that are simple and do not need any authorization or other processing.
+<span style="color:orange">This is a new feature in .NET 8 that allows you to bypass the middleware pipeline for certain endpoints. This can be useful for improving performance, especially for endpoints that are simple and do not need any authorization or other processing. </span>
 
 To use Route Short Circuit middleware, you simply need to call the ShortCircuit() method on the endpoint. 
 
@@ -49,4 +49,4 @@ Here are some examples of when you might want to use Route Short Circuit middlew
 4. An API endpoint that is only accessible to internal clients.
 5. An API endpoint that is used to generate images or other static content.
 
-It is important to note that Route Short Circuit middleware should not be used for endpoints that need to perform any complex processing or that need to run middleware for security or compliance reasons. For example, you should not use Route Short Circuit middleware for endpoints that handle user authentication or sensitive data.
+It is important to note that Route Short Circuit middleware should not be used for endpoints that need to perform any complex processing or that need to run middleware for security or compliance reasons. For example, you should not use Route Short Circuit middleware for endpoints that handle user authentication or sensitive data.💡

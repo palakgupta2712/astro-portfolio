@@ -110,4 +110,4 @@ Read Load can move to master replica.
 
 ![image](https://media.licdn.com/dms/image/D5612AQGMMEgK1ChK9w/article-inline_image-shrink_1500_2232/0/1676653117926?e=1713398400&v=beta&t=Cmshj8Wj1FcYoZY3qBJb_7cdLDZDfpU0UTS0zSJbeyA)
 
-This will prevent dependent systems from overtaxing the primary master database.
+This will prevent dependent systems from overtaxing the primary master database.💡

@@ -72,4 +72,4 @@ before jumping on conclusion, i just want to make few points.
 But with Choreography approach we need to Implement complex observability and track what's happening 
 Although a lot of people adopt & prefer Choreography, NOT making Orchestration BAD.
 
-At the end Like Life Tech decisions are not BINARY too my friend, there gonna be always an use/business case. 
+At the end Like Life Tech decisions are not BINARY too my friend, there gonna be always an use/business case. 💡
