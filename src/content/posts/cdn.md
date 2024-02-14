@@ -14,15 +14,15 @@ Geo graphically dispersed servers (Edge, Shield & Origin) used to deliver static
 We do have another concept for Dynamic content caching that GIFY is using, we will understand at the end of this edition via example.
 
 Here is how a typical* CDN system looks like:
-
-(https://media.licdn.com/dms/image/D5612AQGuys4Vec5MhQ/article-inline_image-shrink_1500_2232/0/1674942299857?e=1713398400&v=beta&t=Gbzj5d88VrL_DV2TQ3jhxeuKTScs6TfRJ77b3VBlIhI)
+![Alt text](https://media.licdn.com/dms/image/D5612AQGuys4Vec5MhQ/article-inline_image-shrink_1500_2232/0/1674942299857?e=1713398400&v=beta&t=Gbzj5d88VrL_DV2TQ3jhxeuKTScs6TfRJ77b3VBlIhI)
 
 Let's understand request/response workflow in CDN.
 
 - Consider User1 creates GET request for abc.png image
- https://amitprakash.io.somecloudprovider/abc.png
--- System will look for abc.png image into CDN. (Note:- Every CDN is itself a cache)
--- If abc.png is present/Cached into CDN, it will server to User1 from there, if not it will look into origin, cache into CDN and will server to User1.
+ https://amitprakash.io.somecloudprovider/abc.png.
+
+- System will look for abc.png image into CDN. (Note:- Every CDN is itself a cache)
+- If abc.png is present/Cached into CDN, it will server to User1 from there, if not it will look into origin, cache into CDN and will server to User1.
 Note:- While processing above step3, along with abc.png image to server, origin will add optional HTTP header i.e. TTL(Time-to-Live). This TTL will decide how long image abc.png will be cached to CDN.
 
 - Now Consider User2 will request for same image abc.png, now as long TTL is valid User2 will be served from CDN.
@@ -54,11 +54,11 @@ To overcome this situation we can design Multi-layer CDN.
 Let's understand this multi later from very simple system-design.
 
 ### Single Layer CDN
-(https://media.licdn.com/dms/image/D5612AQEInMnGfcrGdQ/article-inline_image-shrink_1500_2232/0/1675279776809?e=1713398400&v=beta&t=BNqcMuEkQJtcHe0mGP1HAhXLoyTdbC6vql7yr8etZ5A)
+![Alt text](https://media.licdn.com/dms/image/D5612AQEInMnGfcrGdQ/article-inline_image-shrink_1500_2232/0/1675279776809?e=1713398400&v=beta&t=BNqcMuEkQJtcHe0mGP1HAhXLoyTdbC6vql7yr8etZ5A)
 
 ### Multi Layer CDN
 
-(https://media.licdn.com/dms/image/D5612AQG8e1v28EvTLQ/article-inline_image-shrink_1500_2232/0/1675280015887?e=1713398400&v=beta&t=M9qvinBNuIu_d7kKc78rKxUCE60qNvVseqno2S7kAAQ)
+![Alt text](https://media.licdn.com/dms/image/D5612AQG8e1v28EvTLQ/article-inline_image-shrink_1500_2232/0/1675280015887?e=1713398400&v=beta&t=M9qvinBNuIu_d7kKc78rKxUCE60qNvVseqno2S7kAAQ)
 
 Although moving ahead just wanted to have small tough base on Route Specific TTL.
 
@@ -75,5 +75,4 @@ v1/gif/happyface.gif
 // Response Configured caching is an another interesting topic 
 ```
 
-## That's the wrap now for CDN.
-
+### That's the wrap now for CDN.
