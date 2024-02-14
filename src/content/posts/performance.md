@@ -4,7 +4,7 @@ pubDate: "2023-03-05"
 description: "How to Calculate Performance or Capacity of System"
 author: "Amit Prakash"
 image:
-  url: "https://media.licdn.com/dms/image/D5612AQGrayCHWiosMA/article-cover_image-shrink_720_1280/0/1698432612831?e=1713398400&v=beta&t=CtGMhhrqzvKZf3r0VPykz0wmhby_FagOE5YIjieDEEQ"
+  url: "https://media.licdn.com/dms/image/D5612AQGSQ0PPK_-4dA/article-cover_image-shrink_720_1280/0/1678006499846?e=1713398400&v=beta&t=ZhHCUo075eWJRUPSTHLDCqId32yPolnbYFbODOv9hUI"
   alt: "The full Astro logo."
 tags: ["#PreflightParty", "#hashtag#SecurityFirst", "#hashtag#DataHarmony", "#hashtag#NoMoreWebWalls"]
 ---
@@ -56,4 +56,4 @@ We will only estimate media storage here
 * text 140 bytes
 * media 1MB
 1. Media storage: 150 millions * 2 * 10% * 1 MB= 30 TB per day
-2. 5- years media storage: 30 TB * 365 * 5= ~55 PB
+2. 5- years media storage: 30 TB * 365 * 5= ~55 PB 💡
