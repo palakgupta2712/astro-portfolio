@@ -9,7 +9,7 @@ image:
 tags: ["astro", "blogging", "learning in public"]
 ---
 
-<span style="color:orange">Let's Design a system to understand this game play</span>
+<span style="color:orange">Let's Design a system to understand this game play.</span>
 
 ### Technical Requirements
 
