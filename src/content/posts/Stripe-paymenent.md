@@ -106,4 +106,4 @@ The aforementioned use case is not limited to payments; it can apply to any cruc
 
 If you want to explore about perfect re-try mechanism, please click check previous edition of techDiary link is below.
 
-## Reference has been taken from stripe engineering blog, in case if you interested to explore more please check below link 💡
+## Reference has been taken from stripe engineering blog. 💡
