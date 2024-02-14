@@ -9,7 +9,7 @@ image:
 tags: ["#PreflightParty", "#hashtag#SecurityFirst", "#hashtag#DataHarmony", "#hashtag#NoMoreWebWalls"]
 ---
 
-A concurrent thread safe queue is a data structure that allows multiple threads to safely and efficiently add and remove items from the queue concurrently. This is in contrast to a regular queue, which is not thread safe and can lead to data corruption if multiple threads access it at the same time.
+<span style="color:orange">A concurrent thread safe queue is a data structure that allows multiple threads to safely and efficiently add and remove items from the queue concurrently. This is in contrast to a regular queue, which is not thread safe and can lead to data corruption if multiple threads access it at the same time.</span>
 
 Concurrent thread safe queues are typically implemented using lock-free or wait-free algorithms. Lock-free algorithms avoid using locks altogether, while wait-free algorithms guarantee that no thread will ever be blocked while waiting to access the queue.
 
