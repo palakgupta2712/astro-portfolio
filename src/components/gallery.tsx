@@ -100,10 +100,9 @@ type GalleryProps = {
 export const Gallery = ({ children }: GalleryProps) => {
   return (
     <div>
-      <div className="grid grid-cols-1 md:grid-cols-3 gap-4 py-8">
+      <div className="columns-1 sm:columns-2 md:columns-3 lg:columns-4 gap-4 space-y-4 p-4">
         {children}
       </div>
-
       <Carousel />
     </div>
   )
