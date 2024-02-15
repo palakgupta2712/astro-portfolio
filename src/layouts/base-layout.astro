@@ -43,8 +43,8 @@ const metaDescription = post?.body?.slice(0, 100) || "Unveiled Engineering with 
   </head>
 
   <body class="bg-[#0C0A09]">
+    <Navbar />
     <main class={cn("max-w-screen-sm px-6 mx-auto", props.class)}>
-      <Navbar />
       <slot />
     </main>
   </body>
