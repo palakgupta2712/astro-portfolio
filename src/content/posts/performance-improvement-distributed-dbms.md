@@ -1,0 +1,28 @@
+---
+title: "Performance Improvement in Distributed DBMS"
+pubDate: "2023-09-30"
+description: "Performance Improvement in Distributed DBMS"
+author: "Amit Prakash"
+image:
+  url: "https://media.licdn.com/dms/image/D5612AQGa4hXp4urcXA/article-cover_image-shrink_720_1280/0/1696025397560?e=1713398400&v=beta&t=0aa4xUB9Y9vwH97N583sIBQ1t5fTCqOKhL4XALKyGa0"
+  alt: "The full Astro logo."
+tags: ["#PreflightParty", "#hashtag#SecurityFirst", "#hashtag#DataHarmony", "#hashtag#NoMoreWebWalls"]
+---
+
+<span style="color:orange">There are a number of ways to improve performance in a distributed DBMS (DDBMS). Let's talk about couple of them.</span>
+
+When we talk about performance improvement two major things comes into action.
+
+1. Data localization, made possible by distributed DBMS, allows for the storage of information close to its places of usage. Again, there are two possible benefits to this.-> Because each site only manages a single area of the database, there is less server-level congestion for CPU and IO services than there is for centralised databases.The lowest round-trip message propagation delay in satellite-based systems is around 1 second. Localization lowers remote access delays that are often present in wide area networks.The majority of distributed DBMS are designed to take full advantage of data loxalization. Only by properly fragmenting and distributing the database can the benefits of reduced contention and communication overhead be fully realised.
+
+2. For inter-query and intra-query parallelism, distributed systems' inherent parallelism can be used. While intra-query parallelism is accomplished by splitting a single query into numerous sub-questions, each of which is executed at a separate site and accesses a distinct area of the distributed database, inter-query parallelism derives from the ability to run multiple queries concurrently.The first argument dealt with the overhead of distributed computing in cases when data must reside at distant locations and access is required via teleprocessing. The claim is that rather than relocating a lot of data, it is preferable in these cases to distribute data management functions to the data's current location. This has recently come up for debate. According to others, it may be much simpler to keep data in a central location and access it (by downloading) over high speed networks now that high-speed, high-capacity networks are so widely used. Distributing data and data management activities may no longer make sense, they claim. Although persuasive, this argument completely ignores the objective of distributed databases. First off, data are scattered throughout the majority of today's applications. How and where we process it may be up for discussion. Second, and perhaps more importantly, this argument fails to make a distinction between bandwidth, or the capacity of computer links, and latency, or the speed at which data is conveyed. The distributed environment has inherent latency, and there are physical restrictions on how quickly we can move data. Latency is inherent in the distributed environment and there are physical limits to how fast we can send data over computer networks. As indicated above, for example, satellite links take about half-a-second to transmite data between two ground stations. This is a function of the distance of the satellite from the earth and there is nothing that we can do to improve that performance. For some applications, this might constitute an unacceptable delay.The parallelism defence is also crucial. The availability of inter-query and intra-query parallelism would suggest that as much of the distributed database as possible should be duplicated if user access to the database was limited to querying (read-only access). Due to the fact that the majority of database accesses are not read-only, complex concurrency control and commit protocols must be implemented in order to combine read and update operations.Some currently available commercial systems adopt an intriguing method to cope with the conflict between read-only performance in addition to optimising the systems to address this issue. By keeping two copies, they multiplex the database. Ad hoc querying and application programme changes each require a separate copy. The querying database receives periodic copies of the production database. Since this step is necessary to maintain both databases in sync, it does not obviate the requirement to construct the concurrency control and reliability protocol for the production database.
+
+### However there are some additional tips for improving the performance of DB.
+
+1. Use a database performance monitoring tool to identify bottlenecks. This will help you to understand where the system is spending most of its time and to identify areas for improvement.
+
+2. Tune the database configuration parameters. There are a number of configuration parameters that can affect the performance of a DDBMS. It is important to tune these parameters for your specific workload and system configuration.
+
+3. Upgrade the hardware and software. Newer hardware and software is often faster and more efficient than older versions. Upgrading your hardware and software can be a significant investment, but it can also lead to significant performance improvements.
+
+Improving the performance of DDBMSs can be a complex and challenging task. However, by following the tips above, you can improve the performance of your DDBMS and meet the needs of your users. 💡
