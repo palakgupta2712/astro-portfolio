@@ -179,5 +179,5 @@ struct
 }
 ```
 
-*Note*: Reference has been taken from official Microsoft lean site.
+*Note*: Reference has been taken from official Microsoft lean site. 💡
 
